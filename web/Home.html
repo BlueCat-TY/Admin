@@ -40,11 +40,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui dropdown menu">
+                <div class="ui icon top right pointing dropdown button user2">
                     <i class="user icon"></i>
-                    <div classs="menu">
-                        <div class="item"><i class="user icon"></i>消息 </div>
-                        <div class="item"><i class="user icon"></i>好友 </div>
+                    <div class="menu">
+                        <div class="header">Display Density</div>
+                        <div class="item">Comfortable</div>
+                        <div class="item">Cozy</div>
+                        <div class="item">Compact</div>
+                        <div class="ui divider"></div>
+                        <div class="item">Settings</div>
+                        <div class="item">Manage Apps</div>
+                        <div class="item">Keyboard Shortcuts</div>
+                        <div class="item">Help</div>
                     </div>
                 </div>
             </div>
@@ -130,6 +137,11 @@
             $('.usermenu.ui.dropdown').dropdown({
                 action: 'hide'
             });
+
+            $('.user2.ui.dropdown').dropdown({
+                action: 'hide'
+            });
+            
 
             //如果搜索菜单存在，添加搜索方法
             if ($(".menu-search").length >= 0) {

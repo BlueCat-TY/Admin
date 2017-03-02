@@ -103,7 +103,7 @@ a {
 }
 
 /*下拉菜单与父级宽度一致*/
-.ui.top.right.pointing.dropdown > .menu {
+.usermenu.ui.dropdown > .menu {
 	width: 100%;
 }
 

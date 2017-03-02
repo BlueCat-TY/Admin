@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link href="js/mobisscroll3.0_beta2.0/css/mobiscroll.custom-3.0.0-beta2.min.css" rel="stylesheet" />
+
+
+    <style>
+        #select_dummy {
+            border:0;
+        }
+    </style>
+</head>
+<body>
+    <!--年月-->
+    <input type="text" id="datas" />
+    <br />
+    <!--年月日-->
+    <input type="text" id="datas2" />
+    <br />
+    <!--下拉框-->
+    <select id="select" class="select">
+        <option value="0">aaa</option>
+        <option value="1">Atlanta</option>
+        <option value="2">Berlin</option>
+        <option value="3">Boston</option>
+        <option value="4">Chicago</option>
+        <option value="5">London</option>
+        <option value="6">Los Angeles</option>
+        <option value="7">New York</option>
+        <option value="555中文">Paris</option>
+        <option value="9">San Francisco</option>
+    </select>
+    <input type="button" class="btnselect" value="显示日期" />
+    <br />
+
+    <!--下拉级联-->
+    <select id="demo">
+        <optgroup label="USA">
+            <option value="1">Atlanta</option>
+            <option value="2">Boston</option>
+            <option value="3">Chicago</option>
+            <option value="4">Los Angeles</option>
+            <option value="5">New York</option>
+            <option value="6">San Francisco</option>
+        </optgroup>
+        <optgroup label="UK">
+            <option value="7">Bath</option>
+            <option value="8">Bristol</option>
+            <option value="9">Cambridge</option>
+            <option value="10">London</option>
+            <option value="11">Leeds</option>
+            <option value="12">Manchester</option>
+            <option value="13">Newcastle</option>
+            <option value="14">Oxford</option>
+        </optgroup>
+        <optgroup label="China">
+            <option value="15">Beijing</option>
+            <option value="16">Chongqing</option>
+            <option value="17">Shanghai</option>
+            <option value="18">Shenzhen</option>
+            <option value="19">Tianjin</option>
+        </optgroup>
+    </select>
+
+    <input type="button" value="测试" id="ceshi" />
+
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/mobisscroll3.0_beta2.0/js/mobiscroll.custom-3.0.0-beta2.min.js"></script>
+    <script>
+
+        var nowdate = new Date();
+
+        //日期（年月）
+        $('#datas').mobiscroll().date({
+            theme: "material",
+            lang: "zh",
+            display: "center",
+            startYear: nowdate.getFullYear() - 10,
+            endYear: nowdate.getFullYear() + 2,
+            closeOnOverlay: false, //设置为false，点击背景不会关闭
+            dateFormat: 'yyyy-mm', // 日期格式
+        });
+
+        //日期（年月日）
+        $('#datas2').mobiscroll().date({
+            theme: "material",
+            lang: "zh",
+            display: "center",
+            startYear: nowdate.getFullYear() - 10,
+            endYear: nowdate.getFullYear() + 5,
+            closeOnOverlay: false,
+            dateFormat: 'yyyy-mm-dd', // 日期显示和输出格式
+        });
+
+        //下拉菜单
+        $('#select').mobiscroll().select({
+            theme: "material",
+            lang: "zh",
+            display: "center",
+            closeOnOverlay: false
+        });
+
+        //显示下拉框
+        $(".btnselect").click(function () {
+            $("#select").mobiscroll("show");
+        });
+
+
+        //下拉多级联动
+        $('#demo').mobiscroll().select({
+            theme: "material",
+            display: "center",
+            lang: "zh",
+            closeOnOverlay: false,
+            label: "City",
+            group: true,
+            grouplabel: "aaa",
+            width: [100, 200],
+
+        });
+
+
+        $("#select").click(function () {
+            var a = $("#select option:checked").val();
+            alert(a);
+        });
+    </script>
+</body>
+</html>

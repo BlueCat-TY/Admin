@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .checkboxItem
+        {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            outline:none;
+            border: 1px solid #666;
+            position:relative;
+            background:#EBF6F8;
+        }
+        
+        .checkboxItem:checked:after
+        {
+            content:"";
+            width:10px;
+            height:5px;
+            background:#EBF6F8;
+            position:absolute;
+            top:0;
+            left:0;
+            border:3px solid #333;
+            border-top:none;
+            border-right:none;
+            margin-top:3px;
+            margin-left:2px;
+            transform:rotate(-45deg);
+            -ms-transform:rotate(-45deg); 	/* IE 9 */
+            -moz-transform:rotate(-45deg); 	/* Firefox */
+            -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+            -o-transform:rotate(-45deg); 	/* Opera */
+        }
+    </style>
+</head>
+<body>
+    <!--disabled="disabled"-->
+    <input type="checkbox" name="chk" class="checkboxItem" />
+</body>
+</html>

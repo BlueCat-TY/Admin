@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{903F7B9E-564E-4595-90B3-0444858E0D8A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>web</RootNamespace>
+    <AssemblyName>web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Add.html" />
+    <Content Include="css\docs.css" />
+    <Content Include="css\home.css" />
+    <Content Include="css\Index2.css" />
+    <Content Include="css\Index.css" />
+    <Content Include="css\Theme1.css" />
+    <Content Include="css\Theme2.css" />
+    <Content Include="DateTime.html" />
+    <Content Include="DateTime2.html" />
+    <Content Include="default.html" />
+    <Content Include="font\demo.css" />
+    <Content Include="font\demo_fontclass.html" />
+    <Content Include="font\demo_symbol.html" />
+    <Content Include="font\demo_unicode.html" />
+    <Content Include="font\iconfont.css" />
+    <Content Include="font\iconfont.js" />
+    <Content Include="font\iconfont.svg" />
+    <Content Include="Form.html" />
+    <Content Include="Home.html" />
+    <Content Include="images\avatar-default.gif" />
+    <Content Include="images\bsllogo.png" />
+    <Content Include="images\IMG_20170119_141336.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\minus.png" />
+    <Content Include="images\plus.png" />
+    <Content Include="images\theme\bg.jpg" />
+    <Content Include="images\theme\bg10.jpg" />
+    <Content Include="images\theme\bg11.jpg" />
+    <Content Include="images\theme\bg12.jpg" />
+    <Content Include="images\theme\bg13.jpg" />
+    <Content Include="images\theme\bg4.jpg" />
+    <Content Include="images\theme\bg5.jpg" />
+    <Content Include="images\theme\bg9.jpg" />
+    <Content Include="Index2.html" />
+    <Content Include="Index.html" />
+    <Content Include="js\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="js\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="js\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="js\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="js\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="js\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="js\bootstrap\dist\js\npm.js" />
+    <Content Include="js\dialog.js" />
+    <Content Include="js\Form.js" />
+    <Content Include="js\jquery\jquery-3.1.1.min.js" />
+    <Content Include="js\layer\layer.js" />
+    <Content Include="js\layer\mobile\layer.js" />
+    <Content Include="js\layer\mobile\need\layer.css" />
+    <Content Include="js\layer\skin\default\icon-ext.png" />
+    <Content Include="js\layer\skin\default\icon.png" />
+    <Content Include="js\layer\skin\default\layer.css" />
+    <Content Include="js\layer\skin\default\loading-0.gif" />
+    <Content Include="js\layer\skin\default\loading-1.gif" />
+    <Content Include="js\layer\skin\default\loading-2.gif" />
+    <Content Include="js\layui\css\layui.css" />
+    <Content Include="js\layui\css\modules\code.css" />
+    <Content Include="js\layui\css\modules\laydate\icon.png" />
+    <Content Include="js\layui\css\modules\laydate\laydate.css" />
+    <Content Include="js\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="js\layui\css\modules\layer\default\icon.png" />
+    <Content Include="js\layui\css\modules\layer\default\layer.css" />
+    <Content Include="js\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="js\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="js\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="js\layui\font\iconfont.svg" />
+    <Content Include="js\layui\images\face\0.gif" />
+    <Content Include="js\layui\images\face\1.gif" />
+    <Content Include="js\layui\images\face\10.gif" />
+    <Content Include="js\layui\images\face\11.gif" />
+    <Content Include="js\layui\images\face\12.gif" />
+    <Content Include="js\layui\images\face\13.gif" />
+    <Content Include="js\layui\images\face\14.gif" />
+    <Content Include="js\layui\images\face\15.gif" />
+    <Content Include="js\layui\images\face\16.gif" />
+    <Content Include="js\layui\images\face\17.gif" />
+    <Content Include="js\layui\images\face\18.gif" />
+    <Content Include="js\layui\images\face\19.gif" />
+    <Content Include="js\layui\images\face\2.gif" />
+    <Content Include="js\layui\images\face\20.gif" />
+    <Content Include="js\layui\images\face\21.gif" />
+    <Content Include="js\layui\images\face\22.gif" />
+    <Content Include="js\layui\images\face\23.gif" />
+    <Content Include="js\layui\images\face\24.gif" />
+    <Content Include="js\layui\images\face\25.gif" />
+    <Content Include="js\layui\images\face\26.gif" />
+    <Content Include="js\layui\images\face\27.gif" />
+    <Content Include="js\layui\images\face\28.gif" />
+    <Content Include="js\layui\images\face\29.gif" />
+    <Content Include="js\layui\images\face\3.gif" />
+    <Content Include="js\layui\images\face\30.gif" />
+    <Content Include="js\layui\images\face\31.gif" />
+    <Content Include="js\layui\images\face\32.gif" />
+    <Content Include="js\layui\images\face\33.gif" />
+    <Content Include="js\layui\images\face\34.gif" />
+    <Content Include="js\layui\images\face\35.gif" />
+    <Content Include="js\layui\images\face\36.gif" />
+    <Content Include="js\layui\images\face\37.gif" />
+    <Content Include="js\layui\images\face\38.gif" />
+    <Content Include="js\layui\images\face\39.gif" />
+    <Content Include="js\layui\images\face\4.gif" />
+    <Content Include="js\layui\images\face\40.gif" />
+    <Content Include="js\layui\images\face\41.gif" />
+    <Content Include="js\layui\images\face\42.gif" />
+    <Content Include="js\layui\images\face\43.gif" />
+    <Content Include="js\layui\images\face\44.gif" />
+    <Content Include="js\layui\images\face\45.gif" />
+    <Content Include="js\layui\images\face\46.gif" />
+    <Content Include="js\layui\images\face\47.gif" />
+    <Content Include="js\layui\images\face\48.gif" />
+    <Content Include="js\layui\images\face\49.gif" />
+    <Content Include="js\layui\images\face\5.gif" />
+    <Content Include="js\layui\images\face\50.gif" />
+    <Content Include="js\layui\images\face\51.gif" />
+    <Content Include="js\layui\images\face\52.gif" />
+    <Content Include="js\layui\images\face\53.gif" />
+    <Content Include="js\layui\images\face\54.gif" />
+    <Content Include="js\layui\images\face\55.gif" />
+    <Content Include="js\layui\images\face\56.gif" />
+    <Content Include="js\layui\images\face\57.gif" />
+    <Content Include="js\layui\images\face\58.gif" />
+    <Content Include="js\layui\images\face\59.gif" />
+    <Content Include="js\layui\images\face\6.gif" />
+    <Content Include="js\layui\images\face\60.gif" />
+    <Content Include="js\layui\images\face\61.gif" />
+    <Content Include="js\layui\images\face\62.gif" />
+    <Content Include="js\layui\images\face\63.gif" />
+    <Content Include="js\layui\images\face\64.gif" />
+    <Content Include="js\layui\images\face\65.gif" />
+    <Content Include="js\layui\images\face\66.gif" />
+    <Content Include="js\layui\images\face\67.gif" />
+    <Content Include="js\layui\images\face\68.gif" />
+    <Content Include="js\layui\images\face\69.gif" />
+    <Content Include="js\layui\images\face\7.gif" />
+    <Content Include="js\layui\images\face\70.gif" />
+    <Content Include="js\layui\images\face\71.gif" />
+    <Content Include="js\layui\images\face\8.gif" />
+    <Content Include="js\layui\images\face\9.gif" />
+    <Content Include="js\layui\layui.js" />
+    <Content Include="js\layui\lay\dest\layui.all.js" />
+    <Content Include="js\layui\lay\lib\jquery.js" />
+    <Content Include="js\layui\lay\modules\code.js" />
+    <Content Include="js\layui\lay\modules\element.js" />
+    <Content Include="js\layui\lay\modules\flow.js" />
+    <Content Include="js\layui\lay\modules\form.js" />
+    <Content Include="js\layui\lay\modules\laydate.js" />
+    <Content Include="js\layui\lay\modules\layedit.js" />
+    <Content Include="js\layui\lay\modules\layer.js" />
+    <Content Include="js\layui\lay\modules\laypage.js" />
+    <Content Include="js\layui\lay\modules\laytpl.js" />
+    <Content Include="js\layui\lay\modules\tree.js" />
+    <Content Include="js\layui\lay\modules\upload.js" />
+    <Content Include="js\layui\lay\modules\util.js" />
+    <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.svg" />
+    <Content Include="js\mobisscroll3.0_beta2.0\css\mobiscroll.custom-3.0.0-beta2.min.css" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\BMW_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\Dacia_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\f1.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\f2.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\f3.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\f4.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\ferrari_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\fruit-1.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\fruit-2.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\fruit-3.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\fruit-4.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\fruit-5.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\m1.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\m2.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\m3.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\m4.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\mercedes_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\opel_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product1.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product2.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product3.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product4.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product5.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\product6.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\renault_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\images\volkswagen_logo.png" />
+    <Content Include="js\mobisscroll3.0_beta2.0\index.html" />
+    <Content Include="js\mobisscroll3.0_beta2.0\js\mobiscroll.custom-3.0.0-beta2.min.js" />
+    <Content Include="js\mobisscroll3.0_beta2.0\readme.txt" />
+    <Content Include="js\semanticyh.js" />
+    <Content Include="js\semantic\dist\components\accordion.css" />
+    <Content Include="js\semantic\dist\components\accordion.js" />
+    <Content Include="js\semantic\dist\components\accordion.min.css" />
+    <Content Include="js\semantic\dist\components\accordion.min.js" />
+    <Content Include="js\semantic\dist\components\ad.css" />
+    <Content Include="js\semantic\dist\components\ad.min.css" />
+    <Content Include="js\semantic\dist\components\api.js" />
+    <Content Include="js\semantic\dist\components\api.min.js" />
+    <Content Include="js\semantic\dist\components\breadcrumb.css" />
+    <Content Include="js\semantic\dist\components\breadcrumb.min.css" />
+    <Content Include="js\semantic\dist\components\button.css" />
+    <Content Include="js\semantic\dist\components\button.min.css" />
+    <Content Include="js\semantic\dist\components\card.css" />
+    <Content Include="js\semantic\dist\components\card.min.css" />
+    <Content Include="js\semantic\dist\components\checkbox.css" />
+    <Content Include="js\semantic\dist\components\checkbox.js" />
+    <Content Include="js\semantic\dist\components\checkbox.min.css" />
+    <Content Include="js\semantic\dist\components\checkbox.min.js" />
+    <Content Include="js\semantic\dist\components\comment.css" />
+    <Content Include="js\semantic\dist\components\comment.min.css" />
+    <Content Include="js\semantic\dist\components\container.css" />
+    <Content Include="js\semantic\dist\components\container.min.css" />
+    <Content Include="js\semantic\dist\components\dimmer.css" />
+    <Content Include="js\semantic\dist\components\dimmer.js" />
+    <Content Include="js\semantic\dist\components\dimmer.min.css" />
+    <Content Include="js\semantic\dist\components\dimmer.min.js" />
+    <Content Include="js\semantic\dist\components\divider.css" />
+    <Content Include="js\semantic\dist\components\divider.min.css" />
+    <Content Include="js\semantic\dist\components\dropdown.css" />
+    <Content Include="js\semantic\dist\components\dropdown.js" />
+    <Content Include="js\semantic\dist\components\dropdown.min.css" />
+    <Content Include="js\semantic\dist\components\dropdown.min.js" />
+    <Content Include="js\semantic\dist\components\embed.css" />
+    <Content Include="js\semantic\dist\components\embed.js" />
+    <Content Include="js\semantic\dist\components\embed.min.css" />
+    <Content Include="js\semantic\dist\components\embed.min.js" />
+    <Content Include="js\semantic\dist\components\feed.css" />
+    <Content Include="js\semantic\dist\components\feed.min.css" />
+    <Content Include="js\semantic\dist\components\flag.css" />
+    <Content Include="js\semantic\dist\components\flag.min.css" />
+    <Content Include="js\semantic\dist\components\form.css" />
+    <Content Include="js\semantic\dist\components\form.js" />
+    <Content Include="js\semantic\dist\components\form.min.css" />
+    <Content Include="js\semantic\dist\components\form.min.js" />
+    <Content Include="js\semantic\dist\components\grid.css" />
+    <Content Include="js\semantic\dist\components\grid.min.css" />
+    <Content Include="js\semantic\dist\components\header.css" />
+    <Content Include="js\semantic\dist\components\header.min.css" />
+    <Content Include="js\semantic\dist\components\icon.css" />
+    <Content Include="js\semantic\dist\components\icon.min.css" />
+    <Content Include="js\semantic\dist\components\image.css" />
+    <Content Include="js\semantic\dist\components\image.min.css" />
+    <Content Include="js\semantic\dist\components\input.css" />
+    <Content Include="js\semantic\dist\components\input.min.css" />
+    <Content Include="js\semantic\dist\components\item.css" />
+    <Content Include="js\semantic\dist\components\item.min.css" />
+    <Content Include="js\semantic\dist\components\label.css" />
+    <Content Include="js\semantic\dist\components\label.min.css" />
+    <Content Include="js\semantic\dist\components\list.css" />
+    <Content Include="js\semantic\dist\components\list.min.css" />
+    <Content Include="js\semantic\dist\components\loader.css" />
+    <Content Include="js\semantic\dist\components\loader.min.css" />
+    <Content Include="js\semantic\dist\components\menu.css" />
+    <Content Include="js\semantic\dist\components\menu.min.css" />
+    <Content Include="js\semantic\dist\components\message.css" />
+    <Content Include="js\semantic\dist\components\message.min.css" />
+    <Content Include="js\semantic\dist\components\modal.css" />
+    <Content Include="js\semantic\dist\components\modal.js" />
+    <Content Include="js\semantic\dist\components\modal.min.css" />
+    <Content Include="js\semantic\dist\components\modal.min.js" />
+    <Content Include="js\semantic\dist\components\nag.css" />
+    <Content Include="js\semantic\dist\components\nag.js" />
+    <Content Include="js\semantic\dist\components\nag.min.css" />
+    <Content Include="js\semantic\dist\components\nag.min.js" />
+    <Content Include="js\semantic\dist\components\popup.css" />
+    <Content Include="js\semantic\dist\components\popup.js" />
+    <Content Include="js\semantic\dist\components\popup.min.css" />
+    <Content Include="js\semantic\dist\components\popup.min.js" />
+    <Content Include="js\semantic\dist\components\progress.css" />
+    <Content Include="js\semantic\dist\components\progress.js" />
+    <Content Include="js\semantic\dist\components\progress.min.css" />
+    <Content Include="js\semantic\dist\components\progress.min.js" />
+    <Content Include="js\semantic\dist\components\rail.css" />
+    <Content Include="js\semantic\dist\components\rail.min.css" />
+    <Content Include="js\semantic\dist\components\rating.css" />
+    <Content Include="js\semantic\dist\components\rating.js" />
+    <Content Include="js\semantic\dist\components\rating.min.css" />
+    <Content Include="js\semantic\dist\components\rating.min.js" />
+    <Content Include="js\semantic\dist\components\reset.css" />
+    <Content Include="js\semantic\dist\components\reset.min.css" />
+    <Content Include="js\semantic\dist\components\reveal.css" />
+    <Content Include="js\semantic\dist\components\reveal.min.css" />
+    <Content Include="js\semantic\dist\components\search.css" />
+    <Content Include="js\semantic\dist\components\search.js" />
+    <Content Include="js\semantic\dist\components\search.min.css" />
+    <Content Include="js\semantic\dist\components\search.min.js" />
+    <Content Include="js\semantic\dist\components\segment.css" />
+    <Content Include="js\semantic\dist\components\segment.min.css" />
+    <Content Include="js\semantic\dist\components\shape.css" />
+    <Content Include="js\semantic\dist\components\shape.js" />
+    <Content Include="js\semantic\dist\components\shape.min.css" />
+    <Content Include="js\semantic\dist\components\shape.min.js" />
+    <Content Include="js\semantic\dist\components\sidebar.css" />
+    <Content Include="js\semantic\dist\components\sidebar.js" />
+    <Content Include="js\semantic\dist\components\sidebar.min.css" />
+    <Content Include="js\semantic\dist\components\sidebar.min.js" />
+    <Content Include="js\semantic\dist\components\site.css" />
+    <Content Include="js\semantic\dist\components\site.js" />
+    <Content Include="js\semantic\dist\components\site.min.css" />
+    <Content Include="js\semantic\dist\components\site.min.js" />
+    <Content Include="js\semantic\dist\components\state.js" />
+    <Content Include="js\semantic\dist\components\state.min.js" />
+    <Content Include="js\semantic\dist\components\statistic.css" />
+    <Content Include="js\semantic\dist\components\statistic.min.css" />
+    <Content Include="js\semantic\dist\components\step.css" />
+    <Content Include="js\semantic\dist\components\step.min.css" />
+    <Content Include="js\semantic\dist\components\sticky.css" />
+    <Content Include="js\semantic\dist\components\sticky.js" />
+    <Content Include="js\semantic\dist\components\sticky.min.css" />
+    <Content Include="js\semantic\dist\components\sticky.min.js" />
+    <Content Include="js\semantic\dist\components\tab.css" />
+    <Content Include="js\semantic\dist\components\tab.js" />
+    <Content Include="js\semantic\dist\components\tab.min.css" />
+    <Content Include="js\semantic\dist\components\tab.min.js" />
+    <Content Include="js\semantic\dist\components\table.css" />
+    <Content Include="js\semantic\dist\components\table.min.css" />
+    <Content Include="js\semantic\dist\components\transition.css" />
+    <Content Include="js\semantic\dist\components\transition.js" />
+    <Content Include="js\semantic\dist\components\transition.min.css" />
+    <Content Include="js\semantic\dist\components\transition.min.js" />
+    <Content Include="js\semantic\dist\components\visibility.js" />
+    <Content Include="js\semantic\dist\components\visibility.min.js" />
+    <Content Include="js\semantic\dist\semantic.css" />
+    <Content Include="js\semantic\dist\semantic.js" />
+    <Content Include="js\semantic\dist\semantic.min.css" />
+    <Content Include="js\semantic\dist\semantic.min.js" />
+    <Content Include="js\semantic\dist\themes\basic\assets\fonts\icons.svg" />
+    <Content Include="js\semantic\dist\themes\default\assets\fonts\icons.svg" />
+    <Content Include="js\semantic\dist\themes\default\assets\images\flags.png" />
+    <Content Include="js\semantic\dist\themes\github\assets\fonts\octicons.svg" />
+    <Content Include="js\semantic\dist\themes\material\assets\fonts\icons.svg" />
+    <Content Include="js\weui\css\weui.css" />
+    <Content Include="js\weui\css\weui.min.css" />
+    <Content Include="js\weui\js\example\example.js" />
+    <Content Include="js\weui\js\example\index.html" />
+    <Content Include="js\weui\js\weui.js" />
+    <Content Include="js\weui\js\weui.min.js" />
+    <Content Include="table.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="font\iconfont.eot" />
+    <Content Include="font\iconfont.ttf" />
+    <Content Include="font\iconfont.woff" />
+    <Content Include="js\layui\font\iconfont.eot" />
+    <Content Include="js\layui\font\iconfont.ttf" />
+    <Content Include="js\layui\font\iconfont.woff" />
+    <Content Include="js\semantic\dist\themes\basic\assets\fonts\icons.eot" />
+    <Content Include="js\semantic\dist\themes\basic\assets\fonts\icons.ttf" />
+    <Content Include="js\semantic\dist\themes\basic\assets\fonts\icons.woff" />
+    <Content Include="js\semantic\dist\themes\default\assets\fonts\icons.eot" />
+    <Content Include="js\semantic\dist\themes\default\assets\fonts\icons.ttf" />
+    <Content Include="js\semantic\dist\themes\default\assets\fonts\icons.woff" />
+    <Content Include="js\semantic\dist\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="js\semantic\dist\themes\github\assets\fonts\octicons-local.ttf" />
+    <Content Include="js\semantic\dist\themes\github\assets\fonts\octicons.ttf" />
+    <Content Include="js\semantic\dist\themes\github\assets\fonts\octicons.woff" />
+    <Content Include="js\semantic\dist\themes\material\assets\fonts\icons.eot" />
+    <Content Include="js\semantic\dist\themes\material\assets\fonts\icons.ttf" />
+    <Content Include="js\semantic\dist\themes\material\assets\fonts\icons.woff" />
+    <Content Include="js\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="js\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="js\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="js\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="js\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="js\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="js\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="js\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.eot" />
+    <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.ttf" />
+    <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.woff" />
+    <Content Include="js\mobisscroll3.0_beta2.0\license\EULA.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4220</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4176/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

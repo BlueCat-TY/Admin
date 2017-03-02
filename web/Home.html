@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>首页</title>
+    <link href="js/semantic/dist/semantic.min.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/docs.css" rel="stylesheet" />
+    <link href="font/iconfont.css" rel="stylesheet" />
+    <link href="js/layer/skin/default/layer.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="page">
+        <div class="header-top ui grid clearfix">
+            <a class="ten wide column" id="logo"></a>
+            <div class="six wide right floated right aligned column">
+                <div class="user">
+                    <div class="ui compact borderless menu">
+                        <a class="item fitted">
+                            <i class="icon mail"></i>
+                            <div class="floating ui label red circular mini">1</div>
+                        </a>
+                        <a class="item fitted">
+                            <i class="icon users"></i>
+                            <div class="floating ui label red circular mini">999</div>
+                        </a>
+                    </div>
+                    <div class="ui inline icon top right pointing dropdown usermenu">
+                        <div class="text" title="winnie是个小太阳">
+                            <img class="ui avatar image" src="../images/avatar-default.gif">
+                            <span class="nickname">admin</span>
+                        </div>
+                        <i class="dropdown fluid icon"></i>
+                        <div class="menu">
+                            <div class="item"><i class="user icon"></i>个人中心 </div>
+                            <div class="item"><i class="sign out icon"></i>注销登录</div>
+                            <div class="item"><i class="setting icon"></i>设置</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui dropdown menu">
+                    <i class="user icon"></i>
+                    <div classs="menu">
+                        <div class="item"><i class="user icon"></i>消息 </div>
+                        <div class="item"><i class="user icon"></i>好友 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="page-left">
+                <ul>
+                    <li>
+                        <div class="menu-search">
+                            <div class="ui search icon input fluid">
+                                <input type="text" class="txtsearch" placeholder="搜索菜单" />
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-first">
+                            <a href="#"><i class="iconfont icon-friend"></i><span>销售管理</span></a>
+                        </div>
+                        <ul class="menu-two">
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>拜访计划</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>拜访记录</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>库存报告</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>协访报告</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>其他事项</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-first">
+                            <a href="#"><i class="iconfont icon-icontongji"></i><span>数据管理</span></a>
+                        </div>
+                        <ul class="menu-two">
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>客户管理</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>联系人管理</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>产品管理</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>基础数据</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>新旧目标管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-first">
+                            <a href="#"><i class="iconfont icon-iconsetting"></i><span>系统管理</span></a>
+                        </div>
+                        <ul class="menu-two">
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>角色管理</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>用户管理</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>系统日志</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-first">
+                            <a href="#"><i class="iconfont icon-ai-tool"></i><span>系统工具</span></a>
+                        </div>
+                        <ul class="menu-two">
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>资料维护</a></li>
+                            <li><a href="#"><i class="iconfont icon-playfill"></i>通知发布</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-first">
+                            <a href="#"><i class="iconfont icon-icontongji"></i><span>数据管理</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-right">
+                <header class="right-header"></header>
+                <div class="right-content">
+
+                </div>
+                <footer class="footer"></footer>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/semantic/dist/semantic.min.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //下拉框
+            $('.usermenu.ui.dropdown').dropdown({
+                action: 'hide'
+            });
+
+            //如果搜索菜单存在，添加搜索方法
+            if ($(".menu-search").length >= 0) {
+                //搜索菜单
+                $(document).on("keyup", ".txtsearch", function () {
+                    //获取菜单搜索条件
+                    var searchtext = $(".txtsearch").val();
+
+                    if (searchtext == "") {
+                        $(".menu-two").hide();
+                        //回复之前展开的菜单
+                        $(".big-sed + .menu-two").show();
+                    }
+                    else {
+                        $(".menu-two").show();
+                    }
+
+                    $(".menu-first").each(function (key, value) {
+                        //当前子菜单隐藏数量
+                        var smallmenu = 0;
+
+                        $(value).next().find("li").each(function (key2, value2) {
+                            //获取二级菜单文本
+                            var text2 = $(value2).text();
+                            //判断自己菜单是否符合搜索字符
+                            if (text2.indexOf(searchtext) == -1) {
+                                //隐藏菜单
+                                $(value2).hide();
+                                //已经隐藏的菜单数量+1
+                                smallmenu++;
+                            }
+                            else {
+                                //显示菜单
+                                $(value2).show();
+                            }
+                        });
+
+                        //如果子菜单全部隐藏，就把父级菜单也隐藏
+                        if ($(value).next().find("li").length == smallmenu) {
+                            //隐藏大菜单
+                            $(value).parent().hide();
+                        }
+                        else {
+                            //显示大菜单
+                            $(value).parent().show();
+                        }
+                    });
+
+                });
+            }
+
+            //一级菜单收起展开
+            $(".menu-first").click(function () {
+                $(".page-left ul li .menu-two").not($(this).next()).slideUp(500);
+                $(".page-left ul li .menu-first").not($(this)).removeClass("big-sed");
+                //$(".menu-two li a").removeClass("small-sed");
+
+
+                //没有二级菜单的时候
+                if ($(this).next(".menu-two").length <= 0) {
+                    $(this).addClass("big-sed");
+                }
+                else {
+                    //有二级的时候才判断
+                    $(this).next(".menu-two").slideToggle(500, function () {
+                        if ($(this).is(":hidden")) {
+                            $(this).prev().removeClass("big-sed");
+                        }
+                        else {
+                            $(this).prev().addClass("big-sed");
+                        }
+                    });
+                }
+            });
+
+            //二级菜单选中
+            $(".menu-two li a").click(function () {
+                //选中小菜单时，去掉所有大菜单选中样式
+                $(".menu-first").removeClass("big-sed");
+
+                //当前选中小菜单的父级大菜单添加选中样式
+                $(this).parents(".menu-two").prev().addClass("big-sed");
+
+                $(".menu-two li a").removeClass("small-sed");
+                $(this).addClass("small-sed");
+            });
+
+        });
+    </script>
+</body>
+</html>

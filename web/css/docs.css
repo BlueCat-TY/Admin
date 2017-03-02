@@ -1,0 +1,11 @@
+/*home*/
+@media only screen and (max-width:768px) {
+	.user {
+		display:none;
+	}
+
+	#logo {
+		background: url(../images/bsllogo.png) left center no-repeat;
+		background-size:contain;
+	}
+}

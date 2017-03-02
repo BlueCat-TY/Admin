@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link href="js/weui/css/weui.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <input type="button" class="select" value="单列选择" />
+
+    <input type="button"  class="btnaddress" value="地区选择"/>
+
+    <input type="button" class="riqi" value="日历" />
+
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/weui/js/weui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btnaddress").click(function () {
+                //获取数据源
+                var data = JSON.parse('[{"label":"北京","value":0,"children":[{"label":"北京","value":1,"children":[{"label":"朝阳区","value":"chaoyang"}]}]},{"label":"江苏","value":1,"children":[{"label":"苏州","value":1,"children":[{"label":"高新区","value":"gaoxin"}]},{"label":"南京","value":2,"children":[{"label":"xx区","value":"xx"}]},{"label":"无锡","value":3,"children":[{"label":"不知道","value":"no"}]}]},{"label":"浙江","value":3,"children":[{"label":"杭州","value":1,"children":[{"label":"西湖区","value":"xihu"}]},{"label":"嘉兴","value":2,"children":[{"label":"aaa","value":"a"}]}]}]');
+
+                weui.picker(data, {
+                    defaultValue: [0,1,1],
+                    onConfirm: function (result) {
+                        console.log(result)
+                    },
+                    id: 'a'
+                });
+            });
+
+            ///
+            $(".select").click(function () {
+                var data = JSON.parse('[{"label":"飞机票","value":0,"disabled":true},{"label":"火车票","value":1},{"label":"汽车票","value":3},{"label":"公车票","value":4}]');
+                weui.picker(data, {
+                    defaultValue: [0],
+                    onConfirm: function (result) {
+                        console.log(result)
+                    },
+                    id: 'b'
+                });
+            });
+
+            $(".riqi").click(function () {
+
+                var datetime = new Date();
+
+                weui.datePicker({
+                    start: 1990,
+                    end: 2030,
+                    cron: '* * 0,6',
+                    defaultValue: [datetime.getFullYear(), datetime.getMonth() + 1, datetime.getDate()],
+                    onConfirm: function (result) {
+                        console.log(result);
+                    },
+                    id: 'datePicker'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

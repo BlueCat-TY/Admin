@@ -1,11 +1,53 @@
 /*home*/
 @media only screen and (max-width:768px) {
 	.user {
-		display:none;
+		display: none;
 	}
 
 	#logo {
 		background: url(../images/bsllogo.png) left center no-repeat;
-		background-size:contain;
+		background-size: contain;
+	}
+
+	.user2.ui.dropdown {
+		display: inline-block;
+	}
+
+	.page-left {
+		width: 80px;
+	}
+
+	.page-left > ul > li {
+		position: relative;
+	}
+
+	.menu-first {
+		width: 60px;
+	}
+
+	.menu-first > a {
+		padding: 0 10px;
+	}
+
+	.menu-first span {
+		display: none;
+	}
+
+	.menu-first:hover:after {
+		
+	}
+	
+	.menu-two {
+		width: 200px;
+		position: absolute;
+		right: -210px;
+		top: 0;
+		z-index: 2;
+		background: #fff;
+		border-radius: 5px;
+	}
+
+	.menu-search {
+		display: none;
 	}
 }

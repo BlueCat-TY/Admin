@@ -107,6 +107,13 @@ a {
 	width: 100%;
 }
 
+.user2.ui.dropdown {
+	display:none;
+}
+.user2.ui.button.dropdown > .menu {
+	min-width:150px;
+}
+
 /*main*/
 .main {
 	width: 100%;
@@ -154,7 +161,7 @@ a {
 	height: 40px;
 	line-height: 38px;
 	cursor: pointer;
-	padding-left: 5px;
+	padding-left: 10px;
 	font-size: 1rem;
 	font-family: 'Microsoft YaHei';
 	box-sizing: border-box;

@@ -117,19 +117,16 @@
                 </ul>
             </div>
             <div class="page-right">
-
-                <header class="right-header">
-                    <h3 class="open-menu-title left floated">新旧目标管理</h3>
-                    <div class="Crumbs">
-                        <div class="ui mini breadcrumb right floated">
-                            <a class="section">首页</a>
-                            <i class="right angle icon divider"></i>
-                            <a class="section">销售管理</a>
-                            <i class="right angle icon divider"></i>
-                            <div class="active section">库存报告</div>
-                        </div>
+                <div class="right-header">
+                    <h3 class="open-menu-title">新旧目标管理</h3>
+                    <div class="ui mini breadcrumb crumbs">
+                        <a class="section">首页</a>
+                        <i class="divider">|</i>
+                        <a class="section">销售管理</a>
+                        <i class="divider">|</i>
+                        <div class="active section">新旧目标管理</div>
                     </div>
-                </header>
+                </div>
                 <div class="right-content">
 
                 </div>
@@ -242,11 +239,11 @@
 
                 if (clientwidth >= 768) {
                     //电脑屏幕，上下展开
-                    $(".page-left ul li .menu-two").not($(this).next()).slideUp();
+                    $(".page-left ul li .menu-two").not($(this).next()).slideUp(500);
                 }
                 else {
                     //移动端，直接隐藏
-                    $(".page-left ul li .menu-two").not($(this).next()).fadeOut();
+                    $(".page-left ul li .menu-two").not($(this).next()).hide();
                 }
                 //删除所有一级菜单（自己除外）的选中样式
                 $(".page-left ul li .menu-first").not($(this)).removeClass("big-sed");
@@ -259,11 +256,10 @@
                 else {
                     //有二级的时候才判断
                     if (clientwidth >= 768) {
-
                         $(this).next(".menu-two").slideToggle();
                     }
                     else {
-                        $(this).next(".menu-two").slideToggle("fast", "linear");
+                        $(this).next(".menu-two").toggle("fast", "linear");
                     }
 
                     //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式

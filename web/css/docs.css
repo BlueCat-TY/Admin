@@ -22,7 +22,7 @@
 	}
 
 	.page-left > ul > li:first-child {
-		display:none;
+		display: none;
 	}
 
 	.menu-first {
@@ -36,8 +36,9 @@
 	.menu-first span {
 		display: none;
 	}
-	
+
 	.menu-two {
+		display: none;
 		width: 200px;
 		position: absolute;
 		right: -210px;
@@ -48,11 +49,16 @@
 		box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
 	}
 
+	.big-sed + .menu-two {
+		display: block;
+	}
+
 	.menu-search {
 		display: none;
 	}
 
 	.page-right {
-		margin-left:70px;
+		margin-left: 70px;
 	}
+
 }

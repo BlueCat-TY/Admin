@@ -282,29 +282,38 @@ a {
 	margin-left: 240px;
 }
 
-
-
 .right-header {
 	background:#fff;
-	height:40px;
+	min-height:40px;
 	padding:10px;
 	border-radius:5px;
-	color:#999;
 }
 
 .open-menu-title {
-	margin:0;
 	font-size:1rem;
-	font-weight:600;
+	margin:0;
 	float:left;
+	margin-right:20px;
 }
 
-/*面包屑菜单*/
-.Crumbs {
-	background:#fff;
-	float:left;
-	margin-left:20px;
+.crumbs.ui.breadcrumb {
+	color:#999;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Footer背景颜色*/

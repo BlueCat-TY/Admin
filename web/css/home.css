@@ -118,7 +118,7 @@ a {
 .main {
 	width: 100%;
 	height: calc(100% - 72px);
-	background: #ebebeb;
+	background: #f2f2f2;
 }
 
 /*左边菜单*/
@@ -274,15 +274,38 @@ a {
 	color: rgb(149, 207, 248) !important;
 }
 
-
-
-
-
 /*右边*/
 .page-right {
 	height: 100%;
-	margin-left: 250px;
+	padding:10px;
+	box-sizing:border-box;
+	margin-left: 240px;
 }
+
+
+
+.right-header {
+	background:#fff;
+	height:40px;
+	padding:10px;
+	border-radius:5px;
+	color:#999;
+}
+
+.open-menu-title {
+	margin:0;
+	font-size:1rem;
+	font-weight:600;
+	float:left;
+}
+
+/*面包屑菜单*/
+.Crumbs {
+	background:#fff;
+	float:left;
+	margin-left:20px;
+}
+
 
 /*Footer背景颜色*/
 .footer {

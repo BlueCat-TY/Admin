@@ -43,15 +43,14 @@
                 <div class="ui icon top right pointing dropdown button user2">
                     <i class="user icon"></i>
                     <div class="menu">
-                        <div class="header">Display Density</div>
-                        <div class="item">Comfortable</div>
-                        <div class="item">Cozy</div>
-                        <div class="item">Compact</div>
+                        <div class="header">用户菜单</div>
+                        <div class="item"><i class="user icon"></i>消息<label class="ui empty red circular mini label right floated"></label></div>
+                        <div class="item"><i class="users icon"></i>用户组<label class="ui empty red circular mini label right floated"></label></div>
                         <div class="ui divider"></div>
-                        <div class="item">Settings</div>
-                        <div class="item">Manage Apps</div>
-                        <div class="item">Keyboard Shortcuts</div>
-                        <div class="item">Help</div>
+                        <div class="header">系统功能</div>
+                        <div class="item"><i class="user icon"></i>个人中心</div>
+                        <div class="item"><i class="sign out icon"></i>注销登录</div>
+                        <div class="item"><i class="setting icon"></i>设置</div>
                     </div>
                 </div>
             </div>
@@ -118,7 +117,19 @@
                 </ul>
             </div>
             <div class="page-right">
-                <header class="right-header"></header>
+
+                <header class="right-header">
+                    <h3 class="open-menu-title left floated">新旧目标管理</h3>
+                    <div class="Crumbs">
+                        <div class="ui mini breadcrumb right floated">
+                            <a class="section">首页</a>
+                            <i class="right angle icon divider"></i>
+                            <a class="section">销售管理</a>
+                            <i class="right angle icon divider"></i>
+                            <div class="active section">库存报告</div>
+                        </div>
+                    </div>
+                </header>
                 <div class="right-content">
 
                 </div>
@@ -131,6 +142,9 @@
     <script src="js/semantic/dist/semantic.min.js"></script>
     <script src="js/layer/layer.js"></script>
     <script>
+        //获取页面宽度
+        var clientwidth = document.body.clientWidth;
+
         $(document).ready(function () {
 
             //下拉框
@@ -141,7 +155,18 @@
             $('.user2.ui.dropdown').dropdown({
                 action: 'hide'
             });
-            
+
+            //动态调整宽度
+            $(window).resize(function () {
+                clientwidth = document.body.clientWidth;
+                if (clientwidth >= 768) {
+                    $(".big-sed+.menu-two").show();
+                }
+                else {
+                    $(".big-sed+.menu-two").hide();
+                }
+            });
+
 
             //如果搜索菜单存在，添加搜索方法
             if ($(".menu-search").length >= 0) {
@@ -152,7 +177,7 @@
 
                     if (searchtext == "") {
                         $(".menu-two").hide();
-                        //回复之前展开的菜单
+                        //恢复之前展开的菜单
                         $(".big-sed + .menu-two").show();
                     }
                     else {
@@ -160,6 +185,8 @@
                     }
 
                     $(".menu-first").each(function (key, value) {
+
+                        var text1 = $(value).text();
                         //当前子菜单隐藏数量
                         var smallmenu = 0;
 
@@ -179,14 +206,30 @@
                             }
                         });
 
-                        //如果子菜单全部隐藏，就把父级菜单也隐藏
-                        if ($(value).next().find("li").length == smallmenu) {
-                            //隐藏大菜单
-                            $(value).parent().hide();
+                        if (text1.indexOf(searchtext) != -1) {
+                            if ($(value).next().length > 0) {
+                                if ($(value).next().find("li").length == smallmenu) {
+                                    //隐藏大菜单
+                                    $(value).parent().hide();
+                                }
+                                else {
+                                    //显示大菜单
+                                    $(value).parent().show();
+                                }
+                            }
+                            else {
+                                $(value).parent().show();
+                            }
                         }
                         else {
-                            //显示大菜单
-                            $(value).parent().show();
+                            if ($(value).next().find("li").length == smallmenu) {
+                                //隐藏大菜单
+                                $(value).parent().hide();
+                            }
+                            else {
+                                //显示大菜单
+                                $(value).parent().show();
+                            }
                         }
                     });
 
@@ -194,39 +237,68 @@
             }
 
             //一级菜单收起展开
-            $(".menu-first").click(function () {
-                $(".page-left ul li .menu-two").not($(this).next()).slideUp(500);
-                $(".page-left ul li .menu-first").not($(this)).removeClass("big-sed");
-                //$(".menu-two li a").removeClass("small-sed");
+            $(document).on("click", ".menu-first", function (event) {
+                event.stopPropagation();
 
+                if (clientwidth >= 768) {
+                    //电脑屏幕，上下展开
+                    $(".page-left ul li .menu-two").not($(this).next()).slideUp();
+                }
+                else {
+                    //移动端，直接隐藏
+                    $(".page-left ul li .menu-two").not($(this).next()).fadeOut();
+                }
+                //删除所有一级菜单（自己除外）的选中样式
+                $(".page-left ul li .menu-first").not($(this)).removeClass("big-sed");
 
                 //没有二级菜单的时候
                 if ($(this).next(".menu-two").length <= 0) {
+                    //只添加选中样式
                     $(this).addClass("big-sed");
                 }
                 else {
                     //有二级的时候才判断
-                    $(this).next(".menu-two").slideToggle(500, function () {
-                        if ($(this).is(":hidden")) {
-                            $(this).prev().removeClass("big-sed");
-                        }
-                        else {
-                            $(this).prev().addClass("big-sed");
-                        }
-                    });
+                    if (clientwidth >= 768) {
+
+                        $(this).next(".menu-two").slideToggle();
+                    }
+                    else {
+                        $(this).next(".menu-two").slideToggle("fast", "linear");
+                    }
+
+                    //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式
+                    if ($(this).next().is(":hidden")) {
+                        $(this).removeClass("big-sed");
+                    }
+                    else {
+                        $(this).addClass("big-sed");
+                    }
                 }
             });
 
             //二级菜单选中
-            $(".menu-two li a").click(function () {
+            $(document).on("click", ".menu-two li a", function (event) {
+                event.stopPropagation();
+
                 //选中小菜单时，去掉所有大菜单选中样式
                 $(".menu-first").removeClass("big-sed");
-
                 //当前选中小菜单的父级大菜单添加选中样式
                 $(this).parents(".menu-two").prev().addClass("big-sed");
 
                 $(".menu-two li a").removeClass("small-sed");
                 $(this).addClass("small-sed");
+
+                if (clientwidth < 768) {
+                    $(this).parents(".menu-two").hide();
+                }
+
+            });
+
+            //点击隐藏菜单
+            $(document).on("click", function (e) {
+                if (clientwidth < 768) {
+                    $(".menu-two").fadeOut();
+                }
             });
 
         });

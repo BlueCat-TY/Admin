@@ -21,6 +21,10 @@
 		position: relative;
 	}
 
+	.page-left > ul > li:first-child {
+		display:none;
+	}
+
 	.menu-first {
 		width: 60px;
 	}
@@ -32,10 +36,6 @@
 	.menu-first span {
 		display: none;
 	}
-
-	.menu-first:hover:after {
-		
-	}
 	
 	.menu-two {
 		width: 200px;
@@ -45,9 +45,14 @@
 		z-index: 2;
 		background: #fff;
 		border-radius: 5px;
+		box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
 	}
 
 	.menu-search {
 		display: none;
+	}
+
+	.page-right {
+		margin-left:70px;
 	}
 }

@@ -57,16 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Add.html" />
     <Content Include="css\docs.css" />
     <Content Include="css\home.css" />
     <Content Include="css\Index2.css" />
     <Content Include="css\Index.css" />
     <Content Include="css\Theme1.css" />
     <Content Include="css\Theme2.css" />
-    <Content Include="DateTime.html" />
-    <Content Include="DateTime2.html" />
-    <Content Include="default.html" />
     <Content Include="font\demo.css" />
     <Content Include="font\demo_fontclass.html" />
     <Content Include="font\demo_symbol.html" />
@@ -74,7 +70,6 @@
     <Content Include="font\iconfont.css" />
     <Content Include="font\iconfont.js" />
     <Content Include="font\iconfont.svg" />
-    <Content Include="Form.html" />
     <Content Include="Home.html" />
     <Content Include="images\avatar-default.gif" />
     <Content Include="images\bsllogo.png" />
@@ -90,8 +85,6 @@
     <Content Include="images\theme\bg4.jpg" />
     <Content Include="images\theme\bg5.jpg" />
     <Content Include="images\theme\bg9.jpg" />
-    <Content Include="Index2.html" />
-    <Content Include="Index.html" />
     <Content Include="js\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="js\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="js\bootstrap\dist\css\bootstrap.css" />
@@ -389,7 +382,6 @@
     <Content Include="js\weui\js\example\index.html" />
     <Content Include="js\weui\js\weui.js" />
     <Content Include="js\weui\js\weui.min.js" />
-    <Content Include="table.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

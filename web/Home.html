@@ -118,7 +118,7 @@
             </div>
             <div class="page-right">
                 <div class="right-header">
-                    <h3 class="open-menu-title">新旧目标管理</h3>
+                    <h3 class="open-menu-title"><i class="mail icon"></i>新旧目标管理</h3>
                     <div class="ui mini breadcrumb crumbs">
                         <a class="section">首页</a>
                         <i class="divider">|</i>
@@ -128,7 +128,100 @@
                     </div>
                 </div>
                 <div class="right-content">
-
+                    <table class="ui compact selectable celled table">
+                        <colgroup>
+                            <col width="30" />
+                            <col width="70"/>
+                            <col width="100" />
+                            <col width="100" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                            <col width="30" />
+                            <col width="30" />
+                            <col width="100" />
+                            <col width="100" />
+                            <col width="50"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>拜访人</th>
+                                <th>医院名称</th>
+                                <th>设备</th>
+                                <th>Alcon Constellation</th>
+                                <th>Alcon Accurus</th>
+                                <th>Alcon Infinity</th>
+                                <th>Alcon Legacy</th>
+                                <th>Alcon Centurion</th>
+                                <th>AMO Signature</th>
+                                <th>AMO Sovereign</th>
+                                <th>蔡司</th>
+                                <th>其他</th>
+                                <th>创建时间</th>
+                                <th>提交时间</th>
+                                <th>详情</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <div class="ui checkbox">
+                                    <input type="checkbox" name="example">
+                                    <label></label>
+                                </div>
+                            </td>
+                            <td>张三</td>
+                            <td>中山大学中山眼科中心</td>
+                            <td>Stellaris PC Victus</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>2016-12-24 14:35:40</td>
+                            <td>2016-12-24 14:38:36</td>
+                            <td>
+                                <button class="ui mini blue icon button">
+                                    <i class="search icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ui checkbox">
+                                    <input type="checkbox" name="example">
+                                    <label></label>
+                                </div>
+                            </td>
+                            <td>张三</td>
+                            <td>中山大学中山眼科中心</td>
+                            <td>Stellaris PC Victus</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>2016-12-24 14:35:40</td>
+                            <td>2016-12-24 14:38:36</td>
+                            <td>
+                                <button class="ui mini blue icon button">
+                                    <i class="search icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <footer class="footer"></footer>
             </div>
@@ -239,14 +332,14 @@
 
                 if (clientwidth >= 768) {
                     //电脑屏幕，上下展开
-                    $(".page-left ul li .menu-two").not($(this).next()).slideUp(500);
+                    $(".page-left>ul>li .menu-two").not($(this).next()).slideUp(500);
                 }
                 else {
                     //移动端，直接隐藏
-                    $(".page-left ul li .menu-two").not($(this).next()).hide();
+                    $(".page-left>ul>li .menu-two").not($(this).next()).hide();
                 }
                 //删除所有一级菜单（自己除外）的选中样式
-                $(".page-left ul li .menu-first").not($(this)).removeClass("big-sed");
+                $(".page-left>ul>li .menu-first").not($(this)).removeClass("big-sed");
 
                 //没有二级菜单的时候
                 if ($(this).next(".menu-two").length <= 0) {
@@ -254,16 +347,18 @@
                     $(this).addClass("big-sed");
                 }
                 else {
+                    alert("0");
                     //有二级的时候才判断
                     if (clientwidth >= 768) {
                         $(this).next(".menu-two").slideToggle();
                     }
                     else {
-                        $(this).next(".menu-two").toggle("fast", "linear");
+                        $(this).next(".menu-two").toggle("linear");
                     }
 
                     //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式
-                    if ($(this).next().is(":hidden")) {
+                    if ($(this).next(".menu-two").is(":hidden")) {
+                        alert("1");
                         $(this).removeClass("big-sed");
                     }
                     else {

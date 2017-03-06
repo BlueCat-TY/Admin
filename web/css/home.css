@@ -118,23 +118,25 @@ a {
 .main {
 	width: 100%;
 	height: calc(100% - 72px);
-	background: #f2f2f2;
+	background: #ebebeb;
 }
 
 /*左边菜单*/
 .page-left {
-	width: 250px;
+	width: 200px;
 	height: 100%;
 	float: left;
 	margin: 0;
 	padding: 0;
-	padding: 10px;
+	background:#fff;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	/*padding: 10px;*/
 }
 
 .page-left > ul {
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	background: #fff;
-	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	
 }
 
 .menu-search {
@@ -279,26 +281,45 @@ a {
 	height: 100%;
 	padding:10px;
 	box-sizing:border-box;
-	margin-left: 240px;
+	margin-left: 200px;
 }
 
 .right-header {
 	background:#fff;
-	min-height:40px;
+	min-height:50px;
 	padding:10px;
-	border-radius:5px;
+	border-radius:3px;
 }
 
 .open-menu-title {
-	font-size:1rem;
-	margin:0;
+	font-family:"Microsoft YaHei";
+	font-weight:normal;
+	font-size:1.4rem;
 	float:left;
 	margin-right:20px;
+}
+.open-menu-title + .ui.breadcrumb.crumbs {
+	margin-top:13px;
 }
 
 .crumbs.ui.breadcrumb {
 	color:#999;
 }
+
+.right-content {
+	margin-top:10px;
+}
+
+.right-content .ui.table tr th{
+	word-wrap:break-word;
+}
+.table tr td .ui.checkbox label {
+	padding:0;
+}
+.ui.table tr th {
+	word-wrap:break-word;
+}
+
 
 
 

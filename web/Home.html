@@ -347,22 +347,27 @@
                     $(this).addClass("big-sed");
                 }
                 else {
-                    alert("0");
+                    _this = $(this);
                     //有二级的时候才判断
                     if (clientwidth >= 768) {
-                        $(this).next(".menu-two").slideToggle();
+                        $(this).next().slideToggle(function () {
+                            display(_this);
+                        });
                     }
                     else {
-                        $(this).next(".menu-two").toggle("linear");
+                        $(this).next().toggle("linear", function () {
+                            display(_this);
+                        });
                     }
-
-                    //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式
-                    if ($(this).next(".menu-two").is(":hidden")) {
-                        alert("1");
-                        $(this).removeClass("big-sed");
-                    }
-                    else {
-                        $(this).addClass("big-sed");
+                    
+                    function display(tag) {
+                        //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式
+                        if ($(tag).next().is(":hidden")) {
+                            $(tag).removeClass("big-sed");
+                        }
+                        else {
+                            $(tag).addClass("big-sed");
+                        }
                     }
                 }
             });

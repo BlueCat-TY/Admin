@@ -59,10 +59,6 @@
   <ItemGroup>
     <Content Include="css\docs.css" />
     <Content Include="css\home.css" />
-    <Content Include="css\Index2.css" />
-    <Content Include="css\Index.css" />
-    <Content Include="css\Theme1.css" />
-    <Content Include="css\Theme2.css" />
     <Content Include="font\demo.css" />
     <Content Include="font\demo_fontclass.html" />
     <Content Include="font\demo_symbol.html" />
@@ -382,6 +378,7 @@
     <Content Include="js\weui\js\example\index.html" />
     <Content Include="js\weui\js\weui.js" />
     <Content Include="js\weui\js\weui.min.js" />
+    <Content Include="Test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -420,6 +417,7 @@
     <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.ttf" />
     <Content Include="js\mobisscroll3.0_beta2.0\css\icons_mobiscroll.woff" />
     <Content Include="js\mobisscroll3.0_beta2.0\license\EULA.pdf" />
+    <None Include="Properties\PublishProfiles\admin.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

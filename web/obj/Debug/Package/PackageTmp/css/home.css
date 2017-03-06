@@ -1,0 +1,318 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+	height: 100%;
+}
+
+html, body, .page {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font: 14px 'Helvetica Neue','Microsoft YaHei','Hiragino Sans GB','WenQuanYi Micro Hei',Helvetica,Arial,Sans-serif;
+	color: #444;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.ui.grid {
+	margin: 0;
+}
+
+.header-top {
+	height: 72px;
+	background: #fff;
+}
+
+/*LOGO*/
+#logo {
+	/*float: left;
+	margin-left: 20px;*/
+	height:100%;
+	background: url(../images/bsllogo.png) left center no-repeat;
+}
+
+#logo a {
+	display: block;
+	width:100%;
+	height:100%;
+}
+
+/*角色标签*/
+.role {
+	margin-top: 10px;
+}
+
+/*header-user*/
+.header-top > .user {
+}
+
+/*去除菜单阴影*/
+.user .ui.compact.menu {
+	border: none;
+	box-shadow: none;
+	min-height: 1em;
+}
+
+/* 顶部标题菜单*/
+.user .ui.menu .item {
+	margin-right: 20px;
+	/*color: #333;*/
+}
+
+/*修改顶部标签菜单悬停样式*/
+.user a.item:hover {
+	background: #fff !important;
+	color: rgba(0,0,0,.6) !important;
+}
+
+/*Header标签菜单图标大小*/
+.ui.compact.menu .item > i.icon {
+	font-size: 1.5em;
+}
+
+/*昵称*/
+.nickname {
+	vertical-align: middle;
+	max-width: 100px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*下拉菜单文字大小*/
+.ui.dropdown .menu > .item {
+	font-size: .875rem;
+}
+
+/*下拉菜单图标大小*/
+.usermenu > .menu > .item > i.icon {
+	font-size: 1rem;
+}
+
+/*下拉菜单与父级宽度一致*/
+.usermenu.ui.dropdown > .menu {
+	width: 100%;
+}
+
+.user2.ui.dropdown {
+	display:none;
+}
+.user2.ui.button.dropdown > .menu {
+	min-width:150px;
+}
+
+/*main*/
+.main {
+	width: 100%;
+	height: calc(100% - 72px);
+	background: #f2f2f2;
+}
+
+/*左边菜单*/
+.page-left {
+	width: 250px;
+	height: 100%;
+	float: left;
+	margin: 0;
+	padding: 0;
+	padding: 10px;
+}
+
+.page-left > ul {
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+}
+
+.menu-search {
+	background: #fff;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 0 0 5px 5px;
+}
+
+.page-left > ul > li:first-child {
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+}
+
+/*一级菜单行样式*/
+.page-left > ul > li {
+	list-style: none;
+	border-top: 1px solid rgba(34,36,38,.05);
+}
+
+/*一级菜单行样式*/
+.menu-first {
+	width: 100%;
+	height: 40px;
+	line-height: 38px;
+	cursor: pointer;
+	padding-left: 10px;
+	font-size: 1rem;
+	font-family: 'Microsoft YaHei';
+	box-sizing: border-box;
+	position: relative;
+}
+
+/*一级菜单悬停(已选中除外)样式*/
+.menu-first:hover:not(.big-sed) {
+	background: #f8f8f8;
+	border-radius: 5px;
+}
+
+/*一级菜单行样式*/
+.menu-first a {
+	padding: 0 10px;
+	color: #666;
+}
+/*一级菜单文字样式*/
+.menu-first > a > span {
+	font-size: 1rem;
+}
+
+/*一级菜单图标样式*/
+.menu-first > a > i.iconfont {
+	margin-right: 5px;
+}
+
+/*一级菜单选中样式*/
+.big-sed {
+	background: #f8f8f8;
+	border-radius: 5px;
+}
+
+.big-sed:after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #f8f8f8;
+	border: 1px solid rgba(34,36,38,.15);
+	border-left: none;
+	border-bottom: none;
+	position: absolute;
+	top: 15px;
+	right: -6px;
+	z-index: 999;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-moz-transform: rotate(45deg); /* Firefox */
+	-webkit-transform: rotate(45deg); /* Safari 和 Chrome */
+	-o-transform: rotate(45deg);
+}
+
+/*左边二级菜单*/
+.menu-two {
+	display: none;
+	padding: 10px;
+}
+
+.menu-two li {
+	list-style: none;
+	width: 100%;
+	height: 30px;
+	box-sizing: border-box;
+}
+
+/*二级菜单样式*/
+.menu-two > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #666;
+	font-size: 0.875rem;
+	padding-left: 20px;
+	transition: padding .5s;
+	/*超出部分省略号*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*二级菜单图标样式*/
+.menu-two > li > a > i.iconfont {
+	color: #666;
+	padding-right: 5px;
+	box-sizing: border-box;
+	font-size: 10px !important;
+}
+
+/*二级菜单悬停字体样式*/
+.menu-two > li > a:hover:not(.small-sed) {
+	padding-left: 25px;
+	color: rgb(149, 207, 248);
+	background: #f8f8f8;
+}
+
+/*二级菜单悬停图标样式*/
+.menu-two > li > a:hover:not(.small-sed) > i.iconfont {
+	color: rgb(149, 207, 248);
+}
+
+/*二级菜单选中字体颜色*/
+.small-sed {
+	background: #f8f8f8;
+	color: rgb(149, 207, 248) !important;
+}
+
+/*二级菜单选中图标颜色*/
+.small-sed > i.iconfont {
+	color: rgb(149, 207, 248) !important;
+}
+
+/*右边*/
+.page-right {
+	height: 100%;
+	padding:10px;
+	box-sizing:border-box;
+	margin-left: 240px;
+}
+
+
+
+.right-header {
+	background:#fff;
+	height:40px;
+	padding:10px;
+	border-radius:5px;
+	color:#999;
+}
+
+.open-menu-title {
+	margin:0;
+	font-size:1rem;
+	font-weight:600;
+	float:left;
+}
+
+/*面包屑菜单*/
+.Crumbs {
+	background:#fff;
+	float:left;
+	margin-left:20px;
+}
+
+
+/*Footer背景颜色*/
+.footer {
+	background: #ebebeb;
+}
+
+/*Footer文字颜色*/
+.footer p {
+	color: #666;
+}

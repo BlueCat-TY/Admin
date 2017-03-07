@@ -68,7 +68,7 @@
                     </li>
                     <li>
                         <div class="menu-first">
-                            <a href="#"><i class="iconfont icon-friend"></i><span>销售管理</span></a>
+                            <a href="#"><i class="users icon"></i><span>销售管理</span></a>
                         </div>
                         <ul class="menu-two">
                             <li><a href="#"><i class="iconfont icon-playfill"></i>拜访计划</a></li>
@@ -118,7 +118,7 @@
             </div>
             <div class="page-right">
                 <div class="right-header">
-                    <h3 class="open-menu-title"><i class="mail icon"></i>新旧目标管理</h3>
+                    <h3 class="open-menu-title"><i class="chart icon"></i>新旧目标管理</h3>
                     <div class="ui mini breadcrumb crumbs">
                         <a class="section">首页</a>
                         <i class="divider">|</i>
@@ -128,102 +128,12 @@
                     </div>
                 </div>
                 <div class="right-content">
-                    <table class="ui compact selectable celled table">
-                        <colgroup>
-                            <col width="30" />
-                            <col width="70"/>
-                            <col width="100" />
-                            <col width="100" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="" />
-                            <col width="30" />
-                            <col width="30" />
-                            <col width="100" />
-                            <col width="100" />
-                            <col width="50"/>
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>拜访人</th>
-                                <th>医院名称</th>
-                                <th>设备</th>
-                                <th>Alcon Constellation</th>
-                                <th>Alcon Accurus</th>
-                                <th>Alcon Infinity</th>
-                                <th>Alcon Legacy</th>
-                                <th>Alcon Centurion</th>
-                                <th>AMO Signature</th>
-                                <th>AMO Sovereign</th>
-                                <th>蔡司</th>
-                                <th>其他</th>
-                                <th>创建时间</th>
-                                <th>提交时间</th>
-                                <th>详情</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>
-                                <div class="ui checkbox">
-                                    <input type="checkbox" name="example">
-                                    <label></label>
-                                </div>
-                            </td>
-                            <td>张三</td>
-                            <td>中山大学中山眼科中心</td>
-                            <td>Stellaris PC Victus</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>2016-12-24 14:35:40</td>
-                            <td>2016-12-24 14:38:36</td>
-                            <td>
-                                <button class="ui mini blue icon button">
-                                    <i class="search icon"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="ui checkbox">
-                                    <input type="checkbox" name="example">
-                                    <label></label>
-                                </div>
-                            </td>
-                            <td>张三</td>
-                            <td>中山大学中山眼科中心</td>
-                            <td>Stellaris PC Victus</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>2016-12-24 14:35:40</td>
-                            <td>2016-12-24 14:38:36</td>
-                            <td>
-                                <button class="ui mini blue icon button">
-                                    <i class="search icon"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
+                    <iframe class="frm" id="frm" name="frm" src="table.html"></iframe>
                 </div>
-                <footer class="footer"></footer>
+                <div class="right-footer">
+
+                </div>
+                <footer class="footer">1</footer>
             </div>
         </div>
 
@@ -249,7 +159,7 @@
             //动态调整宽度
             $(window).resize(function () {
                 clientwidth = document.body.clientWidth;
-                if (clientwidth >= 768) {
+                if (clientwidth > 768) {
                     $(".big-sed+.menu-two").show();
                 }
                 else {
@@ -330,7 +240,7 @@
             $(document).on("click", ".menu-first", function (event) {
                 event.stopPropagation();
 
-                if (clientwidth >= 768) {
+                if (clientwidth > 768) {
                     //电脑屏幕，上下展开
                     $(".page-left>ul>li .menu-two").not($(this).next()).slideUp(500);
                 }
@@ -349,13 +259,13 @@
                 else {
                     _this = $(this);
                     //有二级的时候才判断
-                    if (clientwidth >= 768) {
+                    if (clientwidth > 768) {
                         $(this).next().slideToggle(function () {
                             display(_this);
                         });
                     }
                     else {
-                        $(this).next().toggle("linear", function () {
+                        $(this).next().toggle(function () {
                             display(_this);
                         });
                     }
@@ -384,7 +294,7 @@
                 $(".menu-two li a").removeClass("small-sed");
                 $(this).addClass("small-sed");
 
-                if (clientwidth < 768) {
+                if (clientwidth <= 768) {
                     $(this).parents(".menu-two").hide();
                 }
 
@@ -392,7 +302,7 @@
 
             //点击隐藏菜单
             $(document).on("click", function (e) {
-                if (clientwidth < 768) {
+                if (clientwidth <= 768) {
                     $(".menu-two").fadeOut();
                 }
             });

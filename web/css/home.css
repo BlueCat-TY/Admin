@@ -193,8 +193,11 @@ a {
 
 /*一级菜单选中样式*/
 .big-sed {
-	background: #f8f8f8;
-	border-radius: 5px;
+	background:#f8f8f8;
+	border-radius:1px;
+}
+.big-sed a {
+	/*color:#fff;*/
 }
 
 .big-sed:after {
@@ -203,12 +206,12 @@ a {
 	width: 10px;
 	height: 10px;
 	background: #f8f8f8;
-	border: 1px solid rgba(34,36,38,.15);
+	border: 1px solid rgba(34,36,38,.1);
 	border-left: none;
 	border-bottom: none;
 	position: absolute;
 	top: 15px;
-	right: -6px;
+	right: -5px;
 	z-index: 999;
 	transform: rotate(45deg);
 	-ms-transform: rotate(45deg); /* IE 9 */
@@ -267,7 +270,7 @@ a {
 
 /*二级菜单选中字体颜色*/
 .small-sed {
-	background: #f8f8f8;
+	
 	color: rgb(149, 207, 248) !important;
 }
 
@@ -296,10 +299,11 @@ a {
 	font-weight:normal;
 	font-size:1.4rem;
 	float:left;
+	margin:0;
 	margin-right:20px;
 }
 .open-menu-title + .ui.breadcrumb.crumbs {
-	margin-top:13px;
+	margin-top:12px;
 }
 
 .crumbs.ui.breadcrumb {
@@ -308,38 +312,28 @@ a {
 
 .right-content {
 	margin-top:10px;
+	width:100%;
+	height:calc(100% - 120px);
+	background:#ccc;
 }
 
-.right-content .ui.table tr th{
-	word-wrap:break-word;
-}
-.table tr td .ui.checkbox label {
-	padding:0;
-}
-.ui.table tr th {
-	word-wrap:break-word;
+.right-content #frm {
+	border:none;
+	width:100%;
+	height:100%;
+	background:rgba(255,255,255,.1);
+	border-radius:2px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.right-footer {
+	width:100%;
+	height:40px;
+	background:#fff;
+}
 
 /*Footer背景颜色*/
 .footer {
-	background: #ebebeb;
+	background: #ccc;
 }
 
 /*Footer文字颜色*/

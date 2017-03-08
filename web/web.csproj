@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="css\docs.css" />
     <Content Include="css\home.css" />
+    <Content Include="css\table.css" />
     <Content Include="font\demo.css" />
     <Content Include="font\demo_fontclass.html" />
     <Content Include="font\demo_symbol.html" />

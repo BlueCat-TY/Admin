@@ -31,87 +31,54 @@ a {
 }
 
 .header-top {
-	height: 72px;
+	height: 60px;
+	padding: 6px 5px;
 	background: #fff;
 }
 
 /*LOGO*/
-#logo {
-	/*float: left;
-	margin-left: 20px;*/
-	height:100%;
-	background: url(../images/bsllogo.png) left center no-repeat;
+.logo {
+	height: 50px;
+	width: auto;
 }
 
-#logo a {
-	display: block;
-	width:100%;
-	height:100%;
+.header-top > .ui.secondary.menu > .item > i.icon {
+	margin: 0;
 }
 
-/*角色标签*/
-.role {
-	margin-top: 10px;
+.header-top .right.item .item {
+	margin-right: 10px;
+}
+.usermenu {
+	margin-right:10px;
+}
+.usermenu.ui.dropdown .menu .item {
+	border-radius: 0;
 }
 
-/*header-user*/
-.header-top > .user {
+.usermenu.ui.dropdown > .text {
+	margin-left:10px;
+}
+.usermenu.ui.dropdown > .text > img {
+	margin: 0;
 }
 
-/*去除菜单阴影*/
-.user .ui.compact.menu {
-	border: none;
-	box-shadow: none;
-	min-height: 1em;
+.usermenu.ui.dropdown  > .dropdown.icon {
+	margin: 0;
 }
 
-/* 顶部标题菜单*/
-.user .ui.menu .item {
-	margin-right: 20px;
-	/*color: #333;*/
-}
-
-/*修改顶部标签菜单悬停样式*/
-.user a.item:hover {
-	background: #fff !important;
-	color: rgba(0,0,0,.6) !important;
-}
-
-/*Header标签菜单图标大小*/
-.ui.compact.menu .item > i.icon {
-	font-size: 1.5em;
-}
-
-/*昵称*/
 .nickname {
+	font-weight: 600;
 	vertical-align: middle;
-	max-width: 100px;
+	max-width: 60px;
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-/*下拉菜单文字大小*/
-.ui.dropdown .menu > .item {
-	font-size: .875rem;
-}
-
-/*下拉菜单图标大小*/
-.usermenu > .menu > .item > i.icon {
-	font-size: 1rem;
-}
-
-/*下拉菜单与父级宽度一致*/
-.usermenu.ui.dropdown > .menu {
-	width: 100%;
-}
-
-.user2.ui.dropdown {
-	display:none;
-}
-.user2.ui.button.dropdown > .menu {
-	min-width:150px;
+.mb {
+	display:none !important;
 }
 
 /*main*/
@@ -128,7 +95,7 @@ a {
 	float: left;
 	margin: 0;
 	padding: 0;
-	background:#fff;
+	background: #fff;
 	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
 	/*padding: 10px;*/
 }
@@ -136,7 +103,6 @@ a {
 .page-left > ul {
 	/*border-radius: 5px;*/
 	background: #fff;
-	
 }
 
 .menu-search {
@@ -193,9 +159,10 @@ a {
 
 /*一级菜单选中样式*/
 .big-sed {
-	background:#f8f8f8;
-	border-radius:1px;
+	background: #f8f8f8;
+	border-radius: 1px;
 }
+
 .big-sed a {
 	/*color:#fff;*/
 }
@@ -224,6 +191,7 @@ a {
 .menu-two {
 	display: none;
 	padding: 10px;
+	outline: none;
 }
 
 .menu-two li {
@@ -270,7 +238,6 @@ a {
 
 /*二级菜单选中字体颜色*/
 .small-sed {
-	
 	color: rgb(149, 207, 248) !important;
 }
 
@@ -282,61 +249,63 @@ a {
 /*右边*/
 .page-right {
 	height: 100%;
-	padding:10px;
-	box-sizing:border-box;
+	padding: 10px;
+	box-sizing: border-box;
 	margin-left: 200px;
 }
 
 .right-header {
-	background:#fff;
-	min-height:50px;
-	padding:10px;
-	border-radius:3px;
+	background: #fff;
+	min-height: 50px;
+	padding: 10px;
+	border-radius: 3px;
 }
 
 .open-menu-title {
-	font-family:"Microsoft YaHei";
-	font-weight:normal;
-	font-size:1.4rem;
-	float:left;
-	margin:0;
-	margin-right:20px;
+	font-family: "Microsoft YaHei";
+	font-weight: normal;
+	font-size: 1.4rem;
+	float: left;
+	margin: 0;
+	margin-right: 20px;
 }
+
 .open-menu-title + .ui.breadcrumb.crumbs {
-	margin-top:12px;
+	margin-top: 12px;
 }
 
 .crumbs.ui.breadcrumb {
-	color:#999;
+	color: #999;
 }
 
 .right-content {
-	margin-top:10px;
-	width:100%;
-	height:calc(100% - 120px);
-	background:#ccc;
+	margin-top: 10px;
+	width: 100%;
+	height: calc(100% - 120px);
+	background: #ccc;
 }
 
 .right-content #frm {
-	border:none;
-	width:100%;
-	height:100%;
-	background:rgba(255,255,255,.1);
-	border-radius:2px;
+	border: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.1);
+	border-radius: 2px;
 }
 
 .right-footer {
-	width:100%;
-	height:40px;
-	background:#fff;
+	width: 100%;
+	height: 40px;
+	background: #fff;
 }
 
 /*Footer背景颜色*/
 .footer {
-	background: #ccc;
+	background: #fff;
 }
 
 /*Footer文字颜色*/
 .footer p {
 	color: #666;
+	text-align: center;
 }

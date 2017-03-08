@@ -13,44 +13,43 @@
 </head>
 <body>
     <div class="page">
-        <div class="header-top ui grid clearfix">
-            <a class="ten wide column" id="logo"></a>
-            <div class="six wide right floated right aligned column">
-                <div class="user">
-                    <div class="ui compact borderless menu">
-                        <a class="item fitted">
-                            <i class="icon mail"></i>
+        <div class="header-top">
+            <div class="ui secondary menu">
+                <div class="item fitted">
+                    <img class="ui logo" src="/images/bsllogo.png">
+                </div>
+                <a class="item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <div class="right fitted item">
+                    <div class="ui secondary menu">
+                        <a class="item fitted pc">
+                            <i class="icon mail large"></i>
                             <div class="floating ui label red circular mini">1</div>
                         </a>
-                        <a class="item fitted">
-                            <i class="icon users"></i>
+                        <a class="item fitted pc">
+                            <i class="icon users large"></i>
                             <div class="floating ui label red circular mini">999</div>
                         </a>
-                    </div>
-                    <div class="ui inline icon top right pointing dropdown usermenu">
-                        <div class="text" title="winnie是个小太阳">
-                            <img class="ui avatar image" src="../images/avatar-default.gif">
-                            <span class="nickname">admin</span>
+                        <div class="item fitted">
+                            <div class="ui top right pointing icon dropdown usermenu">
+                                <div class="text" title="winnie是个小太阳">
+                                    <img class="ui avatar image" src="../images/avatar-default.gif">
+                                    <span class="nickname">zhangsan</span>
+                                </div>
+                                <i class="dropdown icon"></i>
+                                <div class="mini menu" style="width:180px;">
+                                    <div class="header mb">System</div>
+                                    <div class="item mb"><i class="mail icon"></i>系统消息</div>
+                                    <div class="item mb"><i class="users icon"></i>用户</div>
+                                    <div class="divider mb"></div>
+                                    <div class="header">User Center</div>
+                                    <div class="item"><i class="user icon"></i>编辑资料</div>
+                                    <div class="item"><i class="sign out icon"></i>安全退出</div>
+                                    <div class="item"><i class="setting icon"></i>系统设置</div>
+                                </div>
+                            </div>
                         </div>
-                        <i class="dropdown fluid icon"></i>
-                        <div class="menu">
-                            <div class="item"><i class="user icon"></i>个人中心 </div>
-                            <div class="item"><i class="sign out icon"></i>注销登录</div>
-                            <div class="item"><i class="setting icon"></i>设置</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui icon top right pointing dropdown button user2">
-                    <i class="user icon"></i>
-                    <div class="menu">
-                        <div class="header">用户菜单</div>
-                        <div class="item"><i class="user icon"></i>消息<label class="ui empty red circular mini label right floated"></label></div>
-                        <div class="item"><i class="users icon"></i>用户组<label class="ui empty red circular mini label right floated"></label></div>
-                        <div class="ui divider"></div>
-                        <div class="header">系统功能</div>
-                        <div class="item"><i class="user icon"></i>个人中心</div>
-                        <div class="item"><i class="sign out icon"></i>注销登录</div>
-                        <div class="item"><i class="setting icon"></i>设置</div>
                     </div>
                 </div>
             </div>
@@ -133,7 +132,9 @@
                 <div class="right-footer">
 
                 </div>
-                <footer class="footer">1</footer>
+                <footer class="footer">
+                    <p>2005&nbsp;-&nbsp;2017&nbsp;&nbsp;&copy;版权所有&nbsp;&nbsp;&nbsp;苏州xxx </p>
+                </footer>
             </div>
         </div>
 
@@ -239,44 +240,41 @@
             //一级菜单收起展开
             $(document).on("click", ".menu-first", function (event) {
                 event.stopPropagation();
+                _this = $(this);
 
-                if (clientwidth > 768) {
-                    //电脑屏幕，上下展开
-                    $(".page-left>ul>li .menu-two").not($(this).next()).slideUp(500);
-                }
-                else {
-                    //移动端，直接隐藏
-                    $(".page-left>ul>li .menu-two").not($(this).next()).hide();
-                }
                 //删除所有一级菜单（自己除外）的选中样式
-                $(".page-left>ul>li .menu-first").not($(this)).removeClass("big-sed");
+                $(".menu-first").not(_this).removeClass("big-sed");
 
-                //没有二级菜单的时候
-                if ($(this).next(".menu-two").length <= 0) {
-                    //只添加选中样式
-                    $(this).addClass("big-sed");
+                if (clientwidth >= 768) {
+                    $(".menu-first").not(_this).next(".menu-two").slideUp();
                 }
                 else {
-                    _this = $(this);
-                    //有二级的时候才判断
-                    if (clientwidth > 768) {
-                        $(this).next().slideToggle(function () {
-                            display(_this);
-                        });
+                    $(".menu-first").not(_this).next(".menu-two").hide();
+                }
+
+                var menutwo = _this.next(".menu-two");
+                if (menutwo.length <= 0) {
+                    //没有二级菜单的时候,只添加选中样式
+                    _this.addClass("big-sed");
+                }
+                else {
+                    console.log(menutwo.is(":hidden"));
+                    //有二级菜单,判断隐藏还是显示
+                    if (menutwo.is(":hidden")) {
+                        //如果隐藏就显示
+                        _this.addClass("big-sed");
+                        menutwo.slideDown();
+                        menutwo.focus();
                     }
                     else {
-                        $(this).next().toggle(function () {
-                            display(_this);
-                        });
-                    }
-                    
-                    function display(tag) {
-                        //判断，如果二级菜单隐藏了，就删除上面的一级菜选种样式
-                        if ($(tag).next().is(":hidden")) {
-                            $(tag).removeClass("big-sed");
+                        //如果显示就隐藏
+                        console.log(clientwidth);
+                        _this.removeClass("big-sed");
+                        if (clientwidth >= 768) {
+                            menutwo.slideUp();
                         }
                         else {
-                            $(tag).addClass("big-sed");
+                            menutwo.hide();
                         }
                     }
                 }
@@ -284,28 +282,24 @@
 
             //二级菜单选中
             $(document).on("click", ".menu-two li a", function (event) {
+                //阻止事件冒泡
                 event.stopPropagation();
-
                 //选中小菜单时，去掉所有大菜单选中样式
                 $(".menu-first").removeClass("big-sed");
                 //当前选中小菜单的父级大菜单添加选中样式
                 $(this).parents(".menu-two").prev().addClass("big-sed");
-
+                //去除所有二级菜单的样式
                 $(".menu-two li a").removeClass("small-sed");
+                //给当前二级菜单添加样式
                 $(this).addClass("small-sed");
-
+                //如果屏幕小于768(移动端),点击菜单后隐藏菜单
                 if (clientwidth <= 768) {
                     $(this).parents(".menu-two").hide();
                 }
 
             });
 
-            //点击隐藏菜单
-            $(document).on("click", function (e) {
-                if (clientwidth <= 768) {
-                    $(".menu-two").fadeOut();
-                }
-            });
+
 
         });
     </script>

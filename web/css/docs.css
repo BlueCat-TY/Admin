@@ -1,12 +1,17 @@
 /*home*/
+
 @media only screen and (max-width:769px) {
-	.user {
-		display: none;
+	
+
+	.pc {
+		display:none !important;
+	}
+	.mb {
+		display:block !important;
 	}
 
-	#logo {
-		background: url(../images/bsllogo.png) left center no-repeat;
-		background-size: contain;
+	.user {
+		display: none;
 	}
 
 	.user2.ui.dropdown {
@@ -61,5 +66,11 @@
 	.page-right {
 		margin-left: 60px;
 	}
+}
 
+
+@media only screen and (max-width:414px) {
+	.header-top > .ui.secondary.menu > .item:first-child {
+		display: none;
+	}
 }

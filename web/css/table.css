@@ -1,9 +1,6 @@
 ﻿html, body, .page {
 	background:rgba(255,255,255,0);
 }
-.page {
-
-}
 .page .ui.table tr th{
 	word-wrap:break-word;
 }

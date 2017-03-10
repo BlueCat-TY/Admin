@@ -5,41 +5,65 @@
     <title></title>
     <link href="js/semantic/dist/semantic.min.css" rel="stylesheet" />
     <link href="css/table.css" rel="stylesheet" />
+    <link href="css/docs.css" rel="stylesheet" />
 </head>
-<body style="width:1000px !important; border:1px solid blue;">
-
+<body>
+    <div class="tab-search">
+        <div class="ui grid">
+            <div class="doubling four column row">
+                <div class="column fitted">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户编号</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户名称</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户级别</div>
+                        <input type="text" placeholder="客户级别" />
+                    </div>
+                </div>
+                <div class="column">
+                    <select class="ui search fluid dropdown jibie">
+                        <option value="-1">请选择</option>
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                    </select>
+                </div>
+            </div>
+            <div class="doubling four column row">
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">省份</div>
+                        <input type="text" placeholder="省份" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">市区</div>
+                        <input type="text" placeholder="市区" />
+                    </div>
+                </div>
+                <div class="column">
+                    <button class="ui button">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="ui compact selectable celled table">
-        <colgroup>
-            <col width="30" />
-            <col width="80" />
-            <col width="120" />
-            <col width="60" />
-            <col width="100" />
-            <col width="30" />
-            <col width="30" />
-            <col width="30" />
-            <col width="30" />
-            <col width="30" />
-            <col width="30" />
-            <col width="60" />
-            <col width="60" />
-            <col width="30" />
-            <col width="100" />
-            <col width="60" />
-        </colgroup>
         <thead>
             <tr>
                 <th></th>
                 <th>客户编号</th>
                 <th>客户名称</th>
                 <th>客户级别</th>
-                <th>Alcon Constellation</th>
-                <th>Alcon Accurus</th>
-                <th>Alcon Infinity</th>
-                <th>Alcon Legacy</th>
-                <th>Alcon Centurion</th>
-                <th>AMO Signature</th>
-                <th>AMO Sovereign</th>
                 <th>省份</th>
                 <th>市区</th>
                 <th>经纬度</th>
@@ -58,22 +82,13 @@
             <td>100011</td>
             <td>咸阳市中心医院</td>
             <td>A</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>陕西</td>
             <td>咸阳</td>
             <td>有</td>
             <td>2017-03-08 14:27:52</td>
             <td>有效</td>
             <td>
-                <a class="ui green label">查看</a>
-                <a class="ui orange label">编辑</a>
-                <a class="ui red label">删除</a>
+                <a class="ui label">查看</a>
             </td>
         </tr>
         <tr>
@@ -86,24 +101,22 @@
             <td>100011</td>
             <td>咸阳市中心医院</td>
             <td>A</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
             <td>陕西</td>
             <td>咸阳</td>
             <td>有</td>
             <td>2017-03-08 14:27:52</td>
             <td>有效</td>
             <td>
-                <a class="ui green label">查看</a>
-                <a class="ui orange label">编辑</a>
-                <a class="ui red label">删除</a>
+                <a class="ui label">查看</a>
             </td>
         </tr>
     </table>
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/semantic/dist/semantic.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".jibie.ui.dropdown").dropdown();
+        });
+    </script>
 </body>
 </html>

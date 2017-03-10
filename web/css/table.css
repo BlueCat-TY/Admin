@@ -10,3 +10,11 @@
 .ui.table tr th {
 	word-wrap:break-word;
 }
+
+.ui.table tr td,.ui.table tr th {
+	text-align:center;
+}
+
+.tab-search .ui.grid {
+	margin:0;
+}

@@ -3,33 +3,42 @@
 @media only screen and (max-width:769px) {
 	.pc {
 		/*隐藏PC元素*/
-		display:none !important;
+		display: none !important;
 	}
+
 	.mb {
 		/*显示移动元素*/
-		display:block !important;
+		display: block !important;
 	}
+
 	.left-bg {
-		position:absolute;
-		width:100%;
-		height:calc(100% - 60px);
-		display:none;
-		position:absolute;
-		top:60px;
-		left:0;
-		z-index:2;
+		position: absolute;
+		width: 100%;
+		height: calc(100% - 60px);
+		display: none;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		z-index: 2;
 	}
+
 	.page-left {
-		margin-left:-200px;
-		box-shadow:none;
-		border:none;
+		margin-left: -200px;
+		box-shadow: none;
+		border: none;
 	}
+
 	.page-left > ul {
-		box-shadow:none;
-		border:none;
+		box-shadow: none;
+		border: none;
 	}
+
 	.page-right {
-		margin-left:0 !important;
+		margin-left: 0 !important;
+	}
+
+	.ui.table tr td {
+		text-align: left;
 	}
 }
 
@@ -37,5 +46,13 @@
 @media only screen and (max-width:414px) {
 	.header-top > .ui.secondary.menu > .item:first-child {
 		display: none;
+	}
+
+	.ui.mini.breadcrumb.crumbs {
+		display: none;
+	}
+
+	.ui.table tr td {
+		text-align: left;
 	}
 }

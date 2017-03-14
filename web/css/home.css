@@ -33,8 +33,6 @@ a {
 .header-top {
 	height: 60px;
 	padding: 6px 5px;
-	background: #fff;
-	border-bottom: 1px solid rgb(149, 207, 248);
 }
 
 /*LOGO*/
@@ -79,6 +77,7 @@ a {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	color:#fff;
 }
 
 .mb {
@@ -92,167 +91,68 @@ a {
 	background: #ebebeb;
 }
 
-/*左边菜单*/
-.left-bg {
-	width: 200px;
-	height: 100%;
-	float: left;
-	background: rgba(0,0,0,0.5);
-}
 
 .page-left {
 	width: 200px;
 	height: 100%;
-	margin: 0;
-	padding: 0;
-	background: #fff;
+	float:left;
 	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	position:relative;
+	background:#fff;
 }
 
-.page-left > ul {
-	background: #fff;
+/*移动端遮罩层*/
+.left-bg {
+	display:none;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.5);
 }
 
-.menu-search {
-	background: #fff;
-	padding: 10px;
-	box-sizing: border-box;
-	border-radius: 0 0 5px 5px;
+.left-content {
+	position:absolute;
+	top:0;
+	left:0;
+	width:200px;
+	height:100%;
 }
 
-/*一级菜单行样式*/
-.page-left > ul > li {
-	list-style: none;
-	border-top: 1px solid rgba(34,36,38,.05);
+.left-content > ul > li {
+	width:100%;
 }
 
-.page-left > ul > li:first-child {
-	border: none;
-	border-radius: 5px 5px 0 0;
-	overflow: hidden;
+/*一级菜单*/
+.first-menu {
+	width:100%;
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+	box-sizing:border-box;
+	color:#299aed;
+	margin:0;
 }
 
-/*一级菜单行样式*/
-.menu-first {
-	width: 100%;
-	height: 40px;
-	line-height: 38px;
-	cursor: pointer;
-	padding-left: 10px;
-	font-size: 1rem;
-	font-family: 'Microsoft YaHei';
-	box-sizing: border-box;
-	position: relative;
+/*二级菜单*/
+.Second-menu>li{
+	height:30px;
+	line-height:30px;
 }
 
-/*一级菜单悬停(已选中除外)样式*/
-.menu-first:hover:not(.big-sed) {
-	background: #f8f8f8;
-	border-radius: 5px;
+.Second-menu>li>a {
+	display:block;
+	text-decoration:none;
+	color:#999;
+	padding-left:10px;
 }
 
-/*一级菜单行样式*/
-.menu-first a {
-	padding: 0 10px;
-	color: #666;
-}
-/*一级菜单文字样式*/
-.menu-first > a > span {
-	font-size: 1rem;
-}
-
-/*一级菜单图标样式*/
-.menu-first > a > i.iconfont {
-	margin-right: 5px;
-}
-
-/*一级菜单选中样式*/
-.big-sed {
-	background: #f8f8f8;
-}
-
-
-/*.big-sed:after {
-	content: "";
-	display: block;
-	width: 10px;
-	height: 10px;
-	background: #f8f8f8;
-	border: 1px solid rgba(34,36,38,.1);
-	border-left: none;
-	border-bottom: none;
-	position: absolute;
-	top: 15px;
-	right: -5px;
-	z-index: 999;
-	transform: rotate(45deg);
-	-ms-transform: rotate(45deg); 
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-}*/
-
-/*左边二级菜单*/
-.menu-two {
-	display: none;
-	padding: 10px;
-	outline: none;
-}
-
-.menu-two li {
-	list-style: none;
-	width: 100%;
-	height: 30px;
-	box-sizing: border-box;
-}
-
-/*二级菜单样式*/
-.menu-two > li > a {
-	display: block;
-	height: 30px;
-	line-height: 30px;
-	color: #666;
-	font-size: 0.875rem;
-	padding-left: 20px;
-	transition: padding .5s;
-	/*超出部分省略号*/
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-/*二级菜单图标样式*/
-.menu-two > li > a > i.iconfont {
-	color: #666;
-	padding-right: 5px;
-	box-sizing: border-box;
-	font-size: 10px !important;
-}
-
-/*二级菜单悬停字体样式*/
-.menu-two > li > a:hover:not(.small-sed) {
-	padding-left: 25px;
-	color: rgb(149, 207, 248);
-	background: #f8f8f8;
-}
-
-/*二级菜单悬停图标样式*/
-.menu-two > li > a:hover:not(.small-sed) > i.iconfont {
-	color: rgb(149, 207, 248);
-}
-
-/*二级菜单选中字体颜色*/
-.small-sed {
-	color: rgb(149, 207, 248) !important;
-}
-
-/*二级菜单选中图标颜色*/
-.small-sed > i.iconfont {
-	color: rgb(149, 207, 248) !important;
+.Second-menu > li > a:hover {
+	background:#DEDEDE;
+	color:#010101;
 }
 
 /*右边*/
 .page-right {
+	display:none;
 	margin-left: 200px;
 	height: 100%;
 }

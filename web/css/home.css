@@ -224,13 +224,14 @@ li.Second-menu-selected > a:before {
 
 /*有三级菜单*/
 li.Second-menu-selected2 {
-	/*background: rgba(255, 216, 0, 0.1);*/
-	/*border:1px solid rgba(255, 216, 0, 0.5);*/
+	  /*border:1px solid #dedede;
+	  box-sizing:border-box;*/
+	  background:#f8f8f8;
 }
 
 li.Second-menu-selected2 > a {
-	background:#dedede;
-	color: #333 !important;
+	/*background:#dedede;*/
+	/*color: #333 !important;*/
 }
 
 /*li.Second-menu-selected2 > a, li.Second-menu-selected2 > a + ul > li > a {
@@ -240,9 +241,9 @@ li.Second-menu-selected2 > a {
 /*三级菜单*/
 .Third-menu {
 	display: none;
-	background:#fff;
-	border:2px solid #dedede;
-	box-sizing:border-box;
+	/*background:#fff;*/
+	/*border:2px solid #dedede;
+	box-sizing:border-box;*/
 }
 
 .Third-menu > li > a {
@@ -253,6 +254,7 @@ li.Second-menu-selected2 > a {
 	padding-left: 10px;
 	box-sizing: border-box;
 	color: #999;
+	cursor:pointer;
 	transition: background .3s,color .3s;
 }
 
@@ -270,12 +272,14 @@ li.Second-menu-selected2 > a {
 }
 
 .Third-menu > li > a:hover {
-	background: rgba(255, 216, 0, 0.2);
+	/*background: rgba(255, 216, 0, .5);*/
+	background:#dedede;
 	color:#333 !important;
 }
 
 .Third-menu > li > a.active {
-	background: rgba(255, 216, 0, 0.2);
+	/*background: rgba(255, 216, 0, .5);*/
+	background:#dedede;
 	color:#333 !important;
 }
 

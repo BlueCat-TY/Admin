@@ -16,7 +16,9 @@
         <div class="header-top">
             <div class="ui secondary menu">
                 <div class="item fitted">
-                    <img class="ui logo" src="/images/bsllogo.png">
+                    <div class="logo">
+                        <img src="images/bsllogo.png" />    
+                    </div>
                 </div>
                 <a class="item menu-list">
                     <i class="sidebar icon"></i>
@@ -37,7 +39,7 @@
                                     <img class="ui avatar image" src="../images/avatar-default.gif">
                                     <span class="nickname">zhangsan</span>
                                 </div>
-                                <i class="dropdown icon"></i>
+                                <i class="caret down icon"></i>
                                 <div class="mini menu" style="width:180px;">
                                     <div class="header mb">System</div>
                                     <div class="item mb"><i class="mail icon"></i>系统消息</div>
@@ -62,27 +64,39 @@
                         <li>
                             <p class="first-menu">销售管理</p>
                             <ul class="Second-menu">
-                                <li><a><i class="users icon"></i>拜访计划</a></li>
-                                <li><a><i class="users icon"></i>拜访记录</a></li>
-                                <li><a><i class="users icon"></i>库存报告</a></li>
-                                <li><a><i class="users icon"></i>其他事项</a></li>
-                                <li><a><i class="users icon"></i>工程师维修报告</a></li>
-                            </ul>                            
-                        </li>
-                        <li>
-                            <p class="first-menu">数据管理</p>
-                            <ul class="Second-menu">
-                                <li><a><i class="users icon"></i>角色管理</a></li>
-                                <li><a><i class="users icon"></i>用户管理</a></li>
-                                <li><a><i class="users icon"></i>导入管理</a></li>
+                                <li><a><i class="checked calendar icon"></i><label>拜访计划</label><span class="dot"></span></a>
+                                    <ul class="Third-menu">
+                                        <li><a><i class="file text outline icon"></i><label>药店拜访计划数量大幅减少的开发</label></a></li>
+                                        <li><a><i class="file text outline icon"></i><label>医院拜访计划</label></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="file text outline icon"></i>拜访记录<span class="dot"></span></a>
+                                    <ul class="Third-menu">
+                                        <li><a><i class="file text outline icon"></i><label>药店拜访记录</label></a></li>
+                                        <li><a><i class="file text outline icon"></i><label>医院拜访记录</label></a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="cubes icon"></i><label>库存报告</label></a></li>
+                                <li><a><i class="pin icon"></i><label>其他事项</label></a></li>
+                                <li><a><i class="configure icon"></i><label>工程师维修报告</label></a></li>
                             </ul>
                         </li>
                         <li>
                             <p class="first-menu">数据管理</p>
                             <ul class="Second-menu">
-                                <li><a><i class="users icon"></i>角色管理</a></li>
-                                <li><a><i class="users icon"></i>用户管理</a></li>
-                                <li><a><i class="users icon"></i>导入管理</a></li>
+                                <li><a><i class="coffee icon"></i><label>客户管理</label></a></li>
+                                <li><a><i class="text telephone icon"></i><label>联系人管理</label></a></li>
+                                <li><a><i class="product hunt icon"></i><label>产品管理</label></a></li>
+                                <li><a><i class="upload icon"></i><label>导入管理</label></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="first-menu">系统设置</p>
+                            <ul class="Second-menu">
+                                <li><a><i class="spy icon"></i><label>角色管理</label></a></li>
+                                <li><a><i class="user icon"></i><label>用户管理</label></a></li>
+                                <li><a><i class="book icon"></i><label>系统日志</label></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -128,163 +142,43 @@
                 action: 'hide'
             });
 
-            $('.user2.ui.dropdown').dropdown({
-                action: 'hide'
-            });
-
             //动态调整宽度
             $(window).resize(function () {
                 clientwidth = document.body.clientWidth;
 
             });
 
-            $(document).on("click", ".menu-list", function () {
-                if (clientwidth < 768) {
-                    if ($(".left-bg").is(":hidden")) {
-                        $(".left-bg").show();
-                        $(".page-left").animate({ "margin-left": "0" }, 500);
-                        $(".page-right").animate({ "margin-left": "200px" }, 500);
+            ///二级菜单点击
+            $(document).on("click", ".Second-menu>li>a", function () {
+                _this = $(this).parent();
+                //移除所有二级菜单样式
+                $(".Second-menu>li").removeClass("Second-menu-selected").removeClass("Second-menu-selected2");
+                //隐藏所有三级菜单
+                $(".Third-menu").not(_this.find(".Third-menu")).slideUp();
+                $(".Third-menu>li>a").removeClass("active");
+
+                if (_this.find(".Third-menu").length > 0) {
+                    //有三级级菜单
+                    _this.find(".Third-menu").slideToggle();
+                    //判断是否展开或收起
+                    if (_this.find(".Third-menu").height() > 0) {
+                        _this.removeClass("Second-menu-selected2");
                     }
                     else {
-                        $(".page-right").animate({ "margin-left": "0" }, 500);
-                        $(".page-left").animate({ "margin-left": "-200px" }, 500, function () {
-                            $(".left-bg").hide();
-                        });
+                        _this.addClass("Second-menu-selected2");
                     }
                 }
                 else {
-                    if ($(".left-bg").is(":hidden")) {
-                        $(".left-bg").show();
-                        $(".left-bg").animate({ "margin-left": "0" }, 500);
-                        $(".page-right").animate({ "margin-left": "200px" }, 500);
-                    }
-                    else {
-                        $(".page-right").animate({ "margin-left": "0" }, 500);
-                        $(".left-bg").animate({ "margin-left": "-200px" }, 500, function () {
-                            $(".left-bg").hide();
-                        });
-                    }
+                    //没有三级菜单，直接选中
+                    _this.addClass("Second-menu-selected");
                 }
+
             });
 
-
-            //如果搜索菜单存在，添加搜索方法
-            if ($(".menu-search").length >= 0) {
-                //搜索菜单
-                $(document).on("keyup", ".txtsearch", function () {
-                    //获取菜单搜索条件
-                    var searchtext = $(".txtsearch").val();
-
-                    if (searchtext == "") {
-                        $(".menu-two").hide();
-                        //恢复之前展开的菜单
-                        $(".big-sed + .menu-two").show();
-                    }
-                    else {
-                        $(".menu-two").show();
-                    }
-
-                    $(".menu-first").each(function (key, value) {
-
-                        var text1 = $(value).text();
-                        //当前子菜单隐藏数量
-                        var smallmenu = 0;
-
-                        $(value).next().find("li").each(function (key2, value2) {
-                            //获取二级菜单文本
-                            var text2 = $(value2).text();
-                            //判断自己菜单是否符合搜索字符
-                            if (text2.indexOf(searchtext) == -1) {
-                                //隐藏菜单
-                                $(value2).hide();
-                                //已经隐藏的菜单数量+1
-                                smallmenu++;
-                            }
-                            else {
-                                //显示菜单
-                                $(value2).show();
-                            }
-                        });
-
-                        if (text1.indexOf(searchtext) != -1) {
-                            if ($(value).next().length > 0) {
-                                if ($(value).next().find("li").length == smallmenu) {
-                                    //隐藏大菜单
-                                    $(value).parent().hide();
-                                }
-                                else {
-                                    //显示大菜单
-                                    $(value).parent().show();
-                                }
-                            }
-                            else {
-                                $(value).parent().show();
-                            }
-                        }
-                        else {
-                            if ($(value).next().find("li").length == smallmenu) {
-                                //隐藏大菜单
-                                $(value).parent().hide();
-                            }
-                            else {
-                                //显示大菜单
-                                $(value).parent().show();
-                            }
-                        }
-                    });
-
-                });
-            }
-
-            //一级菜单收起展开
-            $(document).on("click", ".menu-first", function (event) {
-                event.stopPropagation();
-                _this = $(this);
-
-                //删除所有一级菜单（自己除外）的选中样式
-                $(".menu-first").not(_this).removeClass("big-sed");
-                $(".menu-first").not(_this).next(".menu-two").slideUp();
-
-                var menutwo = _this.next(".menu-two");
-                if (menutwo.length <= 0) {
-                    //没有二级菜单的时候,只添加选中样式
-                    _this.addClass("big-sed");
-                }
-                else {
-                    //有二级菜单,判断隐藏还是显示
-                    if (menutwo.is(":hidden")) {
-                        //如果隐藏就显示
-                        _this.addClass("big-sed");
-                        menutwo.slideDown();
-                    }
-                    else {
-                        //如果显示就隐藏
-                        console.log(clientwidth);
-                        _this.removeClass("big-sed");
-                        menutwo.slideUp();
-                    }
-                }
-            });
-
-            //二级菜单选中
-            $(document).on("click", ".menu-two li a", function (event) {
-                //阻止事件冒泡
-                event.stopPropagation();
-                //选中小菜单时，去掉所有大菜单选中样式
-                $(".menu-first").removeClass("big-sed");
-                //当前选中小菜单的父级大菜单添加选中样式
-                $(this).parents(".menu-two").prev().addClass("big-sed");
-                //去除所有二级菜单的样式
-                $(".menu-two li a").removeClass("small-sed");
-                //给当前二级菜单添加样式
-                $(this).addClass("small-sed");
-                //如果屏幕小于768(移动端),点击菜单后隐藏菜单
-                if (clientwidth <= 768) {
-                    $(".page-left").animate({ "margin-left": "-200px" }, 500, function () {
-                        $(".left-bg").hide();
-                    });
-                }
-
+            //三级菜单点击
+            $(document).on("click", ".Third-menu>li>a", function () {
+                $(".Third-menu>li>a").removeClass("active");
+                $(this).addClass("active");
             });
         });
     </script>

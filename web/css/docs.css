@@ -1,4 +1,58 @@
 /*home*/
+@media only screen and (min-width:1000px) {
+	.Second-menu > li > a > label, .Third-menu > li > a > label {
+		width: 120px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@media only screen and (max-width:1000px) {
+	.page-left {
+		width: 60px;
+	}
+
+	.left-content {
+		width: 60px;
+	}
+
+	.first-menu {
+		display: none;
+	}
+
+	.Second-menu li {
+		line-height: 30px;
+		margin-top: 2px;
+		position: relative;
+	}
+
+	.Second-menu > li > a > i.icon {
+		margin-right: 0;
+	}
+
+	.Second-menu > li > a > label, .Third-menu > li > a > label {
+		white-space: nowrap;
+		padding: 0 10px;
+		border-radius: 5px;
+		background: #000;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: -300px;
+		z-index: 2;
+		transition:left .3s;
+	}
+
+	.Second-menu > li > a > span.dot {
+		margin-right: 0;
+	}
+
+	.Second-menu > li > a:hover > label, .Third-menu > li > a:hover > label {
+		left:50px;
+	}
+}
+
 
 @media only screen and (max-width:769px) {
 	.pc {
@@ -11,34 +65,10 @@
 		display: block !important;
 	}
 
-	.left-bg {
-		position: absolute;
-		width: 100%;
-		height: calc(100% - 60px);
-		display: none;
-		position: absolute;
-		top: 60px;
-		left: 0;
-		z-index: 2;
-	}
-
 	.page-left {
-		margin-left: -200px;
-		box-shadow: none;
-		border: none;
 	}
 
-	.page-left > ul {
-		box-shadow: none;
-		border: none;
-	}
-
-	.page-right {
-		margin-left: 0 !important;
-	}
-
-	.ui.table tr td {
-		text-align: left;
+	.left-content {
 	}
 }
 

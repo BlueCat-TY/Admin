@@ -104,7 +104,7 @@ a {
 	width: 200px;
 	height: 100%;
 	float: left;
-	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	box-shadow: 0 1px 2px rgba(34,36,38,.15);
 	position: relative;
 	background: #fff;
 }
@@ -122,6 +122,7 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index:3;
 	width: 200px;
 	height: 100%;
 	padding:10px;
@@ -130,7 +131,6 @@ a {
 
 .left-content > ul {
 	width:100%;
-	margin-top: 10px;
 }
 
 .left-content > ul > li {
@@ -156,6 +156,8 @@ a {
 
 .Second-menu > li > a {
 	display: block;
+	height:30px;
+	line-height:30px;
 	text-decoration: none;
 	color: #999;
 	padding-left: 10px;
@@ -178,13 +180,11 @@ a {
 .Second-menu > li > a > label {
 	float: left;
 	display: block;
-	width: 120px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	
 }
 /*二级菜单下有三级菜单显示小圆点*/
 .Second-menu > li > a > span.dot {
+    vertical-align:middle;
 	display: block;
 	width: 8px;
 	height: 8px;
@@ -224,26 +224,12 @@ li.Second-menu-selected > a:before {
 
 /*有三级菜单*/
 li.Second-menu-selected2 {
-	  /*border:1px solid #dedede;
-	  box-sizing:border-box;*/
 	  background:#f8f8f8;
 }
-
-li.Second-menu-selected2 > a {
-	/*background:#dedede;*/
-	/*color: #333 !important;*/
-}
-
-/*li.Second-menu-selected2 > a, li.Second-menu-selected2 > a + ul > li > a {
-	color: #333 !important;
-}*/
 
 /*三级菜单*/
 .Third-menu {
 	display: none;
-	/*background:#fff;*/
-	/*border:2px solid #dedede;
-	box-sizing:border-box;*/
 }
 
 .Third-menu > li > a {
@@ -264,15 +250,10 @@ li.Second-menu-selected2 > a {
 }
 
 .Third-menu > li > a > label {
-	width: 130px;
 	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .Third-menu > li > a:hover {
-	/*background: rgba(255, 216, 0, .5);*/
 	background:#dedede;
 	color:#333 !important;
 }

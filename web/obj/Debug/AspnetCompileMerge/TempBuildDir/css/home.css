@@ -31,59 +31,55 @@ a {
 }
 
 .header-top {
-	height: 72px;
-	background: #fff;
+	height: 60px;
+	padding: 5px;
 }
 
 /*LOGO*/
-#logo {
-	/*float: left;
-	margin-left: 20px;*/
-	height:100%;
-	background: url(../images/bsllogo.png) left center no-repeat;
+.logo {
+	width: 190px;
+	height: 50px;
 }
 
-#logo a {
-	display: block;
-	width:100%;
-	height:100%;
+.logo > img {
+	height: 100%;
+	max-width: 100%;
 }
 
-/*角色标签*/
-.role {
-	margin-top: 10px;
+.header-top > .ui.secondary.menu {
+	height: 50px;
 }
 
-/*header-user*/
-.header-top > .user {
+.header-top > .ui.secondary.menu > .item > i.icon {
+	margin: 0;
 }
 
-/*去除菜单阴影*/
-.user .ui.compact.menu {
-	border: none;
-	box-shadow: none;
-	min-height: 1em;
+.header-top .right.item .item {
+	margin-right: 10px;
 }
 
-/* 顶部标题菜单*/
-.user .ui.menu .item {
-	margin-right: 20px;
-	/*color: #333;*/
+.usermenu {
+	margin-right: 10px;
 }
 
-/*修改顶部标签菜单悬停样式*/
-.user a.item:hover {
-	background: #fff !important;
-	color: rgba(0,0,0,.6) !important;
+.usermenu.ui.dropdown .menu .item {
+	border-radius: 0;
 }
 
-/*Header标签菜单图标大小*/
-.ui.compact.menu .item > i.icon {
-	font-size: 1.5em;
+.usermenu.ui.dropdown > .text {
+	margin-left: 10px;
 }
 
-/*昵称*/
+.usermenu.ui.dropdown > .text > img {
+	margin: 0;
+}
+
+.usermenu.ui.dropdown > .dropdown.icon {
+	margin: 0;
+}
+
 .nickname {
+	font-weight: 600;
 	vertical-align: middle;
 	max-width: 100px;
 	display: inline-block;
@@ -92,227 +88,256 @@ a {
 	text-overflow: ellipsis;
 }
 
-/*下拉菜单文字大小*/
-.ui.dropdown .menu > .item {
-	font-size: .875rem;
-}
-
-/*下拉菜单图标大小*/
-.usermenu > .menu > .item > i.icon {
-	font-size: 1rem;
-}
-
-/*下拉菜单与父级宽度一致*/
-.usermenu.ui.dropdown > .menu {
-	width: 100%;
-}
-
-.user2.ui.dropdown {
-	display:none;
-}
-.user2.ui.button.dropdown > .menu {
-	min-width:150px;
+.mb {
+	display: none !important;
 }
 
 /*main*/
 .main {
 	width: 100%;
-	height: calc(100% - 72px);
-	background: #f2f2f2;
+	height: calc(100% - 60px);
+	background: #ebebeb;
 }
 
 /*左边菜单*/
 .page-left {
-	width: 250px;
+	width: 200px;
 	height: 100%;
 	float: left;
-	margin: 0;
-	padding: 0;
-	padding: 10px;
-}
-
-.page-left > ul {
-	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(34,36,38,.15);
+	position: relative;
 	background: #fff;
-	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
 }
 
-.menu-search {
-	background: #fff;
-	padding: 10px;
-	box-sizing: border-box;
-	border-radius: 0 0 5px 5px;
-}
-
-.page-left > ul > li:first-child {
-	border-radius: 5px 5px 0 0;
-	overflow: hidden;
-}
-
-/*一级菜单行样式*/
-.page-left > ul > li {
-	list-style: none;
-	border-top: 1px solid rgba(34,36,38,.05);
-}
-
-/*一级菜单行样式*/
-.menu-first {
+/*移动端遮罩层*/
+.left-bg {
+	display: none;
 	width: 100%;
-	height: 40px;
-	line-height: 38px;
-	cursor: pointer;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+}
+
+/*菜单列表*/
+.left-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:3;
+	width: 200px;
+	height: 100%;
+	padding:10px;
+	box-sizing:border-box;
+}
+
+.left-content > ul {
+	width:100%;
+}
+
+.left-content > ul > li {
+	width: 100%;
+}
+
+/*一级菜单*/
+.first-menu {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
 	padding-left: 10px;
-	font-size: 1rem;
-	font-family: 'Microsoft YaHei';
 	box-sizing: border-box;
+	color: #299aed;
+	margin: 0;
+}
+
+/*二级菜单*/
+.Second-menu > li {
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.Second-menu > li > a {
+	display: block;
+	height:30px;
+	line-height:30px;
+	text-decoration: none;
+	color: #999;
+	padding-left: 10px;
+	transition: background .3s,color .3s;
+}
+
+.Second-menu > li > a:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+/*二级菜单前面图标*/
+.Second-menu > li > a > i.icon {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+/*二级菜单文字*/
+.Second-menu > li > a > label {
+	float: left;
+	display: block;
+	
+}
+/*二级菜单下有三级菜单显示小圆点*/
+.Second-menu > li > a > span.dot {
+    vertical-align:middle;
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 100%;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.Second-menu > li:not(.Second-menu-selected):not(.Second-menu-selected2) > a:hover {
+	background: #DEDEDE;
+	color: #333;
+}
+
+/*选中样式*/
+/*没有三级菜单*/
+li.Second-menu-selected {
+	background: #DEDEDE;
 	position: relative;
 }
 
-/*一级菜单悬停(已选中除外)样式*/
-.menu-first:hover:not(.big-sed) {
-	background: #f8f8f8;
-	border-radius: 5px;
+li.Second-menu-selected > a {
+	color: #333 !important;
 }
 
-/*一级菜单行样式*/
-.menu-first a {
-	padding: 0 10px;
-	color: #666;
-}
-/*一级菜单文字样式*/
-.menu-first > a > span {
-	font-size: 1rem;
-}
-
-/*一级菜单图标样式*/
-.menu-first > a > i.iconfont {
-	margin-right: 5px;
-}
-
-/*一级菜单选中样式*/
-.big-sed {
-	background: #f8f8f8;
-	border-radius: 5px;
-}
-
-.big-sed:after {
+li.Second-menu-selected > a:before {
 	content: "";
 	display: block;
-	width: 10px;
-	height: 10px;
-	background: #f8f8f8;
-	border: 1px solid rgba(34,36,38,.15);
-	border-left: none;
-	border-bottom: none;
+	height: 20px;
+	width: 3px;
+	background: #00a700;
 	position: absolute;
-	top: 15px;
-	right: -6px;
-	z-index: 999;
-	transform: rotate(45deg);
-	-ms-transform: rotate(45deg); /* IE 9 */
-	-moz-transform: rotate(45deg); /* Firefox */
-	-webkit-transform: rotate(45deg); /* Safari 和 Chrome */
-	-o-transform: rotate(45deg);
+	top: 5px;
+	left: 0px;
 }
 
-/*左边二级菜单*/
-.menu-two {
+/*有三级菜单*/
+li.Second-menu-selected2 {
+	  background:#f8f8f8;
+}
+
+/*三级菜单*/
+.Third-menu {
 	display: none;
-	padding: 10px;
 }
 
-.menu-two li {
-	list-style: none;
+.Third-menu > li > a {
+	display: block;
 	width: 100%;
 	height: 30px;
-	box-sizing: border-box;
-}
-
-/*二级菜单样式*/
-.menu-two > li > a {
-	display: block;
-	height: 30px;
 	line-height: 30px;
-	color: #666;
-	font-size: 0.875rem;
-	padding-left: 20px;
-	transition: padding .5s;
-	/*超出部分省略号*/
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-/*二级菜单图标样式*/
-.menu-two > li > a > i.iconfont {
-	color: #666;
-	padding-right: 5px;
+	padding-left: 10px;
 	box-sizing: border-box;
-	font-size: 10px !important;
+	color: #999;
+	cursor:pointer;
+	transition: background .3s,color .3s;
 }
 
-/*二级菜单悬停字体样式*/
-.menu-two > li > a:hover:not(.small-sed) {
-	padding-left: 25px;
-	color: rgb(149, 207, 248);
-	background: #f8f8f8;
+.Third-menu > li > a > i.icon {
+	margin-right: 10px;
+	float: left;
 }
 
-/*二级菜单悬停图标样式*/
-.menu-two > li > a:hover:not(.small-sed) > i.iconfont {
-	color: rgb(149, 207, 248);
+.Third-menu > li > a > label {
+	display: block;
 }
 
-/*二级菜单选中字体颜色*/
-.small-sed {
-	background: #f8f8f8;
-	color: rgb(149, 207, 248) !important;
+.Third-menu > li > a:hover {
+	background:#dedede;
+	color:#333 !important;
 }
 
-/*二级菜单选中图标颜色*/
-.small-sed > i.iconfont {
-	color: rgb(149, 207, 248) !important;
+.Third-menu > li > a.active {
+	/*background: rgba(255, 216, 0, .5);*/
+	background:#dedede;
+	color:#333 !important;
 }
 
 /*右边*/
 .page-right {
+	display: none;
+	margin-left: 200px;
 	height: 100%;
-	padding:10px;
-	box-sizing:border-box;
-	margin-left: 240px;
 }
 
+.right-top {
+	padding: 10px;
+	height: calc(100% - 30px);
+	box-sizing: border-box;
+}
 
-
+/*右边标题*/
 .right-header {
-	background:#fff;
-	height:40px;
-	padding:10px;
-	border-radius:5px;
-	color:#999;
+	min-height: 50px;
+	padding: 10px;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	border-radius: 5px 5px 0 0;
 }
 
 .open-menu-title {
-	margin:0;
-	font-size:1rem;
-	font-weight:600;
-	float:left;
+	font-family: "Microsoft YaHei";
+	font-weight: normal;
+	font-size: 1.4rem;
+	float: left;
+	margin: 0;
+	margin-right: 20px;
 }
 
-/*面包屑菜单*/
-.Crumbs {
-	background:#fff;
-	float:left;
-	margin-left:20px;
+.open-menu-title + .ui.breadcrumb.crumbs {
+	margin-top: 12px;
 }
 
+.crumbs.ui.breadcrumb {
+	color: #999;
+}
+
+.right-content {
+	width: 100%;
+	padding: 10px;
+	height: calc(100% - 90px);
+	box-sizing: border-box;
+	background: #fff;
+}
+
+.right-content #frm {
+	border: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.1);
+	border-radius: 2px;
+}
+
+.right-footer {
+	width: 100%;
+	height: 40px;
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+}
 
 /*Footer背景颜色*/
 .footer {
-	background: #ebebeb;
+	background: #fff;
+	height: 30px;
+	line-height: 30px;
 }
 
 /*Footer文字颜色*/
 .footer p {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
 	color: #666;
+	text-align: center;
 }

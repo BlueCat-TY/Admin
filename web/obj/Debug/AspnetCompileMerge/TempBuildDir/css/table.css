@@ -1,0 +1,20 @@
+﻿html, body, .page {
+	background:rgba(255,255,255,0);
+}
+.page .ui.table tr th{
+	word-wrap:break-word;
+}
+.table tr td .ui.checkbox label {
+	padding:0;
+}
+.ui.table tr th {
+	word-wrap:break-word;
+}
+
+.ui.table tr td,.ui.table tr th {
+	text-align:center;
+}
+
+.tab-search .ui.grid {
+	margin:0;
+}

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="js/semantic/dist/semantic.min.css" rel="stylesheet" />
+    <link href="css/table.css" rel="stylesheet" />
+    <link href="css/docs.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="tab-search">
+        <div class="ui grid">
+            <div class="doubling four column row">
+                <div class="column fitted">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户编号</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户名称</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">客户级别</div>
+                        <input type="text" placeholder="客户级别" />
+                    </div>
+                </div>
+                <div class="column">
+                    <select class="ui search fluid dropdown jibie">
+                        <option value="-1">请选择</option>
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                    </select>
+                </div>
+            </div>
+            <div class="doubling four column row">
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">省份</div>
+                        <input type="text" placeholder="省份" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui labeled fluid input">
+                        <div class="ui label">市区</div>
+                        <input type="text" placeholder="市区" />
+                    </div>
+                </div>
+                <div class="column">
+                    <button class="ui button">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="ui compact selectable celled table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>客户编号</th>
+                <th>客户名称</th>
+                <th>客户级别</th>
+                <th>省份</th>
+                <th>市区</th>
+                <th>经纬度</th>
+                <th>创建日期</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <div class="ui checkbox">
+                    <input type="checkbox" name="example">
+                    <label></label>
+                </div>
+            </td>
+            <td>100011</td>
+            <td>咸阳市中心医院</td>
+            <td>A</td>
+            <td>陕西</td>
+            <td>咸阳</td>
+            <td>有</td>
+            <td>2017-03-08 14:27:52</td>
+            <td>有效</td>
+            <td>
+                <a class="ui label">查看</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="ui checkbox">
+                    <input type="checkbox" name="example">
+                    <label></label>
+                </div>
+            </td>
+            <td>100011</td>
+            <td>咸阳市中心医院</td>
+            <td>A</td>
+            <td>陕西</td>
+            <td>咸阳</td>
+            <td>有</td>
+            <td>2017-03-08 14:27:52</td>
+            <td>有效</td>
+            <td>
+                <a class="ui label">查看</a>
+            </td>
+        </tr>
+    </table>
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/semantic/dist/semantic.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".jibie.ui.dropdown").dropdown();
+        });
+    </script>
+</body>
+</html>

@@ -10,16 +10,19 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/web.dll">
-      <publishTime>03/05/2017 09:12:50</publishTime>
+      <publishTime>03/17/2017 10:45:02</publishTime>
     </File>
     <File Include="bin/web.pdb">
-      <publishTime>03/05/2017 09:12:50</publishTime>
+      <publishTime>03/17/2017 10:44:59</publishTime>
     </File>
     <File Include="css/docs.css">
-      <publishTime>03/03/2017 16:46:34</publishTime>
+      <publishTime>03/17/2017 09:34:03</publishTime>
     </File>
     <File Include="css/home.css">
-      <publishTime>03/03/2017 15:10:53</publishTime>
+      <publishTime>03/16/2017 14:19:10</publishTime>
+    </File>
+    <File Include="css/table.css">
+      <publishTime>03/10/2017 17:19:23</publishTime>
     </File>
     <File Include="font/demo.css">
       <publishTime>01/22/2017 15:40:20</publishTime>
@@ -52,7 +55,7 @@
       <publishTime>01/22/2017 15:40:21</publishTime>
     </File>
     <File Include="Home.html">
-      <publishTime>03/03/2017 16:57:44</publishTime>
+      <publishTime>03/16/2017 16:25:39</publishTime>
     </File>
     <File Include="images/avatar-default.gif">
       <publishTime>02/22/2017 16:50:03</publishTime>
@@ -991,7 +994,7 @@
       <publishTime>02/15/2017 14:42:56</publishTime>
     </File>
     <File Include="js/semantic/dist/semantic.min.css">
-      <publishTime>02/15/2017 14:44:04</publishTime>
+      <publishTime>03/08/2017 17:19:46</publishTime>
     </File>
     <File Include="js/semantic/dist/semantic.min.js">
       <publishTime>02/15/2017 14:42:56</publishTime>
@@ -1072,10 +1075,13 @@
       <publishTime>03/01/2017 09:55:25</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>03/03/2017 17:04:07</publishTime>
+      <publishTime>03/17/2017 10:51:22</publishTime>
+    </File>
+    <File Include="table.html">
+      <publishTime>03/10/2017 17:10:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/03/2017 17:03:35</publishTime>
+      <publishTime>03/17/2017 10:51:09</publishTime>
     </File>
   </ItemGroup>
 </Project>

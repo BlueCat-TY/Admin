@@ -1,69 +1,96 @@
 /*home*/
-@media only screen and (max-width:768px) {
-	.user {
-		display: none;
+@media only screen and (min-width:1000px) {
+	.Second-menu > li > a > label, .Third-menu > li > a > label {
+		width: 120px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
+}
 
-	#logo {
-		background: url(../images/bsllogo.png) left center no-repeat;
-		background-size: contain;
-	}
-
-	.user2.ui.dropdown {
-		display: inline-block;
-	}
-
+@media only screen and (max-width:1000px) {
 	.page-left {
-		width: 80px;
-	}
-
-	.page-left > ul > li {
-		position: relative;
-	}
-
-	.page-left > ul > li:first-child {
-		display: none;
-	}
-
-	.menu-first {
 		width: 60px;
 	}
 
-	.menu-first > a {
+	.left-content {
+		width: 60px;
+	}
+
+	.first-menu {
+		display: none;
+	}
+
+	.Second-menu li {
+		line-height: 30px;
+		position: relative;
+	}
+
+	.Second-menu > li > a > i.icon {
+		margin-right: 0;
+	}
+
+	.Second-menu > li > a > label, .Third-menu > li > a > label {
+		white-space: nowrap;
 		padding: 0 10px;
-	}
-
-	.menu-first span {
-		display: none;
-	}
-
-	.menu-two {
-		display: none;
-		width: 200px;
-		position: absolute;
-		right: -210px;
-		top: 0;
-		z-index: 2;
-		background: #fff;
 		border-radius: 5px;
-		box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+		background: #000;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: -300px;
+		z-index: 2;
+		transition:left .3s;
 	}
 
-	.big-sed + .menu-two {
-		display: block;
+	.Second-menu > li > a > span.dot {
+		margin-right: 0;
 	}
 
-	.menu-search {
+	.Second-menu > li > a:hover > label, .Third-menu > li > a:hover > label {
+		animation:leftmenu .5s forwards;
+	}
+
+	@keyframes leftmenu {
+		0% {
+			left:100px;
+		}
+		100% {
+			left:50px;
+		}
+	}
+}
+
+
+@media only screen and (max-width:769px) {
+	.pc {
+		/*隐藏PC元素*/
+		display: none !important;
+	}
+
+	.mb {
+		/*显示移动元素*/
+		display: block !important;
+	}
+
+	.page-left {
+	}
+
+	.left-content {
+	}
+}
+
+
+@media only screen and (max-width:414px) {
+	.header-top > .ui.secondary.menu > .item:first-child {
 		display: none;
 	}
 
-	.page-right {
-		margin-left: 70px;
+	.ui.mini.breadcrumb.crumbs {
+		display: none;
 	}
 
-	.Crumbs {
-		margin-top:10px;
-		display:block;
-		border:1px solid red;
+	.ui.table tr td {
+		text-align: left;
 	}
 }

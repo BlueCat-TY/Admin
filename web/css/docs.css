@@ -23,7 +23,6 @@
 
 	.Second-menu li {
 		line-height: 30px;
-		margin-top: 2px;
 		position: relative;
 	}
 
@@ -41,7 +40,20 @@
 		top: 0;
 		left: -300px;
 		z-index: 2;
-		transition:left .3s;
+		transition: left .3s;
+	}
+
+	.Second-menu > li > a > label:after, .Third-menu > li > a > label:after {
+		position: absolute;
+		top: 9px;
+		left: -7px;
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 5px solid transparent;
+		border-right: 7px solid #000;
+		border-bottom: 5px solid transparent;
 	}
 
 	.Second-menu > li > a > span.dot {
@@ -49,12 +61,27 @@
 	}
 
 	.Second-menu > li > a:hover > label, .Third-menu > li > a:hover > label {
-		left:50px;
+		animation: leftmenu .3s forwards;
+	}
+
+	/*左边菜单提示动画*/
+	@keyframes leftmenu {
+		0% {
+			left: 100px;
+		}
+
+		100% {
+			left: 60px;
+		}
+	}
+
+	.page-right {
+		margin-left: 60px;
 	}
 }
 
 
-@media only screen and (max-width:769px) {
+@media only screen and (max-width:768px) {
 	.pc {
 		/*隐藏PC元素*/
 		display: none !important;
@@ -64,21 +91,17 @@
 		/*显示移动元素*/
 		display: block !important;
 	}
-
-	.page-left {
-	}
-
-	.left-content {
-	}
 }
 
 
+@media only screen and (max-width:600px) {
+	/*.ui.mini.breadcrumb.crumbs {
+		display: none;
+	}*/
+}
+
 @media only screen and (max-width:414px) {
 	.header-top > .ui.secondary.menu > .item:first-child {
-		display: none;
-	}
-
-	.ui.mini.breadcrumb.crumbs {
 		display: none;
 	}
 

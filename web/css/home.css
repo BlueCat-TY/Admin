@@ -16,6 +16,7 @@ html, body, .page {
 body {
 	font: 14px 'Helvetica Neue','Microsoft YaHei','Hiragino Sans GB','WenQuanYi Micro Hei',Helvetica,Arial,Sans-serif;
 	color: #444;
+	background-image: url(/images/theme/bg.jpg);
 }
 
 ul, li {
@@ -33,8 +34,6 @@ a {
 .header-top {
 	height: 60px;
 	padding: 5px;
-	border-bottom:1px solid #f8f8f8;
-	background:#ebebeb;
 }
 
 /*LOGO*/
@@ -62,6 +61,11 @@ a {
 
 .usermenu {
 	margin-right: 10px;
+	color: #fff;
+}
+
+.pc > i.icon {
+	color: #fff;
 }
 
 .usermenu.ui.dropdown .menu .item {
@@ -83,7 +87,7 @@ a {
 .nickname {
 	font-weight: 600;
 	vertical-align: middle;
-	max-width: 100px;
+	max-width: 80px;
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
@@ -105,9 +109,7 @@ a {
 	width: 200px;
 	height: 100%;
 	float: left;
-	box-shadow: 0 1px 2px rgba(34,36,38,.15);
 	position: relative;
-	background: #fff;
 }
 
 /*菜单列表*/
@@ -115,30 +117,37 @@ a {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index:3;
+	z-index: 3;
 	width: 200px;
 	height: 100%;
-	padding:10px;
-	box-sizing:border-box;
+	padding: 10px;
+	box-sizing: border-box;
 }
 
 .left-content > ul {
-	width:100%;
+	width: 100%;
 }
 
 .left-content > ul > li {
 	width: 100%;
 }
 
-/*一级菜单*/
+/*一级菜单样式*/
 .first-menu {
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
 	padding-left: 10px;
 	box-sizing: border-box;
-	color: #299aed;
 	margin: 0;
+	margin-top:10px !important;
+	margin-bottom:10px;
+	border-radius:2px;
+	background:rgba(255, 255, 255, 1);
+	/*background:#ccc;*/
+	color: #333;
+	box-shadow:-1px -1px 3px rgba(0,0,0,.3);
+	/*border-bottom:1px solid #666;*/
 }
 
 /*二级菜单*/
@@ -149,11 +158,12 @@ a {
 
 .Second-menu > li > a {
 	display: block;
-	height:30px;
-	line-height:30px;
+	height: 30px;
+	line-height: 30px;
 	text-decoration: none;
-	color: #999;
+	color: #fff;
 	padding-left: 10px;
+	border-radius: 2px;
 	transition: background .3s,color .3s;
 }
 
@@ -173,11 +183,10 @@ a {
 .Second-menu > li > a > label {
 	float: left;
 	display: block;
-	
 }
-/*二级菜单下有三级菜单显示小圆点*/
+/*二级下面有三级的时候显示的小圆点*/
 .Second-menu > li > a > span.dot {
-    vertical-align:middle;
+	vertical-align: middle;
 	display: block;
 	width: 8px;
 	height: 8px;
@@ -185,26 +194,28 @@ a {
 	float: right;
 	margin-right: 10px;
 	margin-top: 10px;
-	background: rgba(0, 0, 0, 0.1);
+	background: #00a700;
 }
 
+/*二级悬停样式（已选中除外）*/
 .Second-menu > li:not(.Second-menu-selected):not(.Second-menu-selected2) > a:hover {
-	background: #DEDEDE;
-	color: #333;
+	background: rgba(0,0,0,0.3);
 }
 
 /*选中样式*/
-/*没有三级菜单*/
+/*二级选中样式（无三级）*/
 li.Second-menu-selected {
-	background: #DEDEDE;
+	background: rgba(0,0,0,0.3);
 	position: relative;
+	border-radius: 2px;
 }
 
+/*二级选中下面的A样式*/
 li.Second-menu-selected > a {
-	color: #333 !important;
 }
 
-li.Second-menu-selected > a:before {
+/*二级选中前面绿色竖线*/
+li.Second-menu-selected > a:before,.Third-menu > li > a.active:before {
 	content: "";
 	display: block;
 	height: 20px;
@@ -215,14 +226,16 @@ li.Second-menu-selected > a:before {
 	left: 0px;
 }
 
-/*有三级菜单*/
+/*二级选中样式（有三级）*/
 li.Second-menu-selected2 {
-	  background:#f8f8f8;
+	/*因为有三级，所以二级不能选中*/
 }
 
 /*三级菜单*/
 .Third-menu {
 	display: none;
+	border-radius: 2px;
+	background: rgba(0,0,0,0.3);
 }
 
 .Third-menu > li > a {
@@ -232,9 +245,10 @@ li.Second-menu-selected2 {
 	line-height: 30px;
 	padding-left: 10px;
 	box-sizing: border-box;
-	color: #999;
-	cursor:pointer;
+	color: #ccc;
+	cursor: pointer;
 	transition: background .3s,color .3s;
+	position:relative;
 }
 
 .Third-menu > li > a > i.icon {
@@ -247,14 +261,11 @@ li.Second-menu-selected2 {
 }
 
 .Third-menu > li > a:hover {
-	background:#dedede;
-	color:#333 !important;
+	background: rgba(0,0,0,0.2);
 }
 
 .Third-menu > li > a.active {
-	/*background: rgba(255, 216, 0, .5);*/
-	background:#dedede;
-	color:#333 !important;
+	background: rgba(0,0,0,0.2);
 }
 
 /*右边*/
@@ -266,12 +277,11 @@ li.Second-menu-selected2 {
 .right-top {
 	height: calc(100% - 30px);
 	box-sizing: border-box;
-	
 }
 
 /*右边标题*/
 .right-header {
-	height: 40px;	
+	height: 40px;
 	padding: 10px;
 	background: #fff;
 	border-bottom: 1px solid #eee;
@@ -296,7 +306,7 @@ li.Second-menu-selected2 {
 
 .right-content {
 	width: 100%;
-	height: calc(100% - 90px);
+	height: calc(100% - 80px);
 	background: #fff;
 }
 
@@ -304,7 +314,7 @@ li.Second-menu-selected2 {
 	border: none;
 	width: 100%;
 	height: 100%;
-	background: rgba(255,255,255,.1);
+	background: rgba(255,255,255,0);
 	border-radius: 2px;
 }
 
@@ -312,13 +322,12 @@ li.Second-menu-selected2 {
 	width: 100%;
 	height: 40px;
 	background: #fff;
-	padding:0 10px;
-	box-sizing:border-box;
+	padding: 0 10px;
+	box-sizing: border-box;
 }
 
 /*Footer背景颜色*/
 .footer {
-	background: #fff;
 	height: 30px;
 	line-height: 30px;
 }
@@ -328,6 +337,6 @@ li.Second-menu-selected2 {
 	height: 30px;
 	line-height: 30px;
 	font-size: 12px;
-	color: #666;
+	color: #fff;
 	text-align: center;
 }

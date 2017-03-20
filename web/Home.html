@@ -17,7 +17,7 @@
             <div class="ui secondary menu">
                 <div class="item fitted">
                     <div class="logo">
-                        <img src="images/bsllogo.png" />    
+                        <img src="images/bsllogo.png" />
                     </div>
                 </div>
                 <a class="item menu-list">
@@ -40,7 +40,7 @@
                                     <span class="nickname">zhangsan</span>
                                 </div>
                                 <i class="caret down icon"></i>
-                                <div class="mini menu" style="width:180px;">
+                                <div class="mini menu" style="width:150px;">
                                     <div class="header mb">System</div>
                                     <div class="item mb"><i class="mail icon"></i>系统消息</div>
                                     <div class="item mb"><i class="users icon"></i>用户</div>
@@ -64,7 +64,8 @@
                         <li>
                             <p class="first-menu">销售管理</p>
                             <ul class="Second-menu">
-                                <li><a><i class="checked calendar icon"></i><label>拜访计划</label><span class="dot"></span></a>
+                                <li>
+                                    <a><i class="checked calendar icon"></i><label>拜访计划</label><span class="dot"></span></a>
                                     <ul class="Third-menu">
                                         <li><a><i class="file text outline icon"></i><label>药店拜访计划数量大幅减少的开发</label></a></li>
                                         <li><a><i class="file text outline icon"></i><label>医院拜访计划</label></a></li>
@@ -157,6 +158,19 @@
             $('.usermenu.ui.dropdown').dropdown({
                 action: 'hide'
             });
+
+            
+            $('.left-content ul li a').each(function (key,value) {
+                $(value).popup({
+                    position: 'right center',
+                    color: 'red',
+                    content: $(value).find('label').text(),
+                    onShow: function () {
+                        $(".ui.propup").css("background","#000 !important");
+                    }
+                });
+            });
+
 
             //动态调整宽度
             $(window).resize(function () {

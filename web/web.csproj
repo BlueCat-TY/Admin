@@ -68,6 +68,7 @@
     <Content Include="font\iconfont.css" />
     <Content Include="font\iconfont.js" />
     <Content Include="font\iconfont.svg" />
+    <Content Include="Form.html" />
     <Content Include="Home.html" />
     <Content Include="images\avatar-default.gif" />
     <Content Include="images\bsllogo.png" />

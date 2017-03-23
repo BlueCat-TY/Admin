@@ -13,6 +13,7 @@
 </head>
 <body>
     <div class="page">
+
         <div class="header-top">
             <div class="ui secondary menu">
                 <div class="item fitted">
@@ -119,32 +120,16 @@
                         </li>-->
                     </ul>
                 </div>
-                <!--<footer class="footer">
-                    <p>技术支持：苏州xx</p>
-                </footer>-->
             </div>
             <div class="page-right">
-                <div class="right-top">
-                    <div class="right-header">
-                        <div class="ui mini breadcrumb crumbs">
-                            <a class="section"><i class="home icon"></i>首页</a>
-                            <!--<i class="divider">|</i>
-                            <a class="section">销售管理</a>
-                            <i class="divider">|</i>
-                            <div class="active section">新旧目标管理</div>-->
-                        </div>
-                    </div>
-                    <div class="right-content">
-                        <iframe class="frm" id="frm" name="frm" src="default.html"></iframe>
-                    </div>
+                <div class="right-content">
+                    <iframe class="frm" id="frm" name="frm" src="default.html"></iframe>
+                </div>
+                <div class="right-footer">
+                    &copy;版权所有&nbsp;&nbsp;宋璇&nbsp;&nbsp;&nbsp;&nbsp;Email：974914313@qq.com
                 </div>
             </div>
         </div>
-        <table>
-            <tr>
-                <td data-val="1,ad_1" onclick="aaa(this)"></td>
-            </tr>
-        </table>
     </div>
     <script src="js/jquery/jquery-3.1.1.min.js"></script>
     <script src="js/semantic/dist/semantic.min.js"></script>
@@ -159,8 +144,6 @@
             $('.usermenu.ui.dropdown').dropdown({
                 action: 'hide'
             });
-
-            
 
             //左边菜单提示
             if (clientwidth < 1000) {

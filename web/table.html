@@ -6,168 +6,193 @@
     <title></title>
     <link href="js/semantic/dist/semantic.min.css" rel="stylesheet" />
     <link href="css/table.css" rel="stylesheet" />
-    <link href="css/docs.css" rel="stylesheet" />
+    <link href="js/layer/skin/default/layer.css" rel="stylesheet" />
+
+    <!--<link href="css/docs.css" rel="stylesheet" />-->
 </head>
 <body>
     <div class="page">
-        <!--条件搜索-->
-        <div class="table-top">
-            <!--搜索栏-->
-            <div class="tab-search">
-                <ul>
-                    <li>
-                        <div class="ui labeled mini fluid input">
-                            <div class="ui label">客户编号</div>
-                            <input type="text" placeholder="客户编号" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input">
-                            <div class="ui label">客户名称</div>
-                            <input type="text" placeholder="客户编号" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">客户级别</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                                <option value="4">D</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input">
-                            <div class="ui label">负责人</div>
-                            <input type="text" placeholder="负责人" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">经纬度状态</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">有</option>
-                                <option value="2">无</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">是否有效</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">有效</option>
-                                <option value="2">无效</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">省份</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">湖北</option>
-                                <option value="2">安徽</option>
-                                <option value="3">广东</option>
-                                <option value="4">江苏</option>
-                                <option value="5">浙江</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">市区</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">武汉</option>
-                                <option value="2">合肥</option>
-                                <option value="3">广州</option>
-                                <option value="4">苏州</option>
-                                <option value="5">杭州</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input">
-                            <div class="ui label">创建日期</div>
-                            <input type="text" placeholder="" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input">
-                            <div class="ui label">TO</div>
-                            <input type="text" placeholder="" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ui labeled mini fluid input select">
-                            <div class="ui label">事业部</div>
-                            <select class="ui dropdown fluid jibie">
-                                <option value="-1">请选择</option>
-                                <option value="1">OTC</option>
-                                <option value="2">RX</option>
-                                <option value="3">SU</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <button class="ui green mini button">搜索</button>
-                    </li>
-                </ul>
+        <!--面包屑导航-->
+        <div class="crumbs-nav">
+            <div class="ui breadcrumb crumbs">
+                <a class="section"><i class="home icon"></i>首页</a>
+                <i class="divider">|</i>
+                <a class="section">数据管理</a>
+                <i class="divider">|</i>
+                <div class="active section">客户管理</div>
             </div>
-            <!--快捷菜单-->
-            <div class="tab-tool">
-                <div class="ui basic floated buttons">
-                    <button class="ui icon button">
-                        <i class="search icon"></i>
-                        查看详情
-                    </button>
-                    <button class="ui icon button">
-                        <i class="add icon"></i>
-                        添加
-                    </button>
-                    <button class="ui icon button">
-                        <i class="edit icon"></i>
-                        编辑
-                    </button>
-                    <button class="ui icon button">
-                        <i class="remove icon"></i>
-                        删除
-                    </button>
-                    <button class="ui icon button">
-                        <i class="user icon"></i>
-                        管理负责人
-                    </button>
-                </div>
+        </div>
+        <!--提示-->
+        <div class="msg">
+            <div class="ui borderless menu"> <!--green inverted-->
+                <div class="header item"><i class="search icon"></i>查询条件</div>
+                <a class="item right icon floated"><i class="chevron up icon"></i></a>
+            </div>
+        </div>
+        <!--搜索条件-->
+        <div class="tab-search">
+            <ul>
+                <li>
+                    <div class="ui labeled mn fluid input">
+                        <div class="ui label">客户编号</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input">
+                        <div class="ui label">客户名称</div>
+                        <input type="text" placeholder="客户编号" />
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">客户级别</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input">
+                        <div class="ui label">负责人</div>
+                        <input type="text" placeholder="负责人" />
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">经纬度状态</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">有</option>
+                            <option value="2">无</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">是否有效</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">有效</option>
+                            <option value="2">无效</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">省份</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">湖北</option>
+                            <option value="2">安徽</option>
+                            <option value="3">广东</option>
+                            <option value="4">江苏</option>
+                            <option value="5">浙江</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">市区</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">武汉</option>
+                            <option value="2">合肥</option>
+                            <option value="3">广州</option>
+                            <option value="4">苏州</option>
+                            <option value="5">杭州</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input">
+                        <div class="ui label">创建日期</div>
+                        <input type="text" placeholder="" />
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input">
+                        <div class="ui label">TO</div>
+                        <input type="text" placeholder="" />
+                    </div>
+                </li>
+                <li>
+                    <div class="ui labeled mn fluid input select">
+                        <div class="ui label">事业部</div>
+                        <select class="ui dropdown fluid jibie">
+                            <option value="-1">请选择</option>
+                            <option value="1">OTC</option>
+                            <option value="2">RX</option>
+                            <option value="3">SU</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <button class="ui primary mn button"><i class="search  icon"></i>搜索</button>
+                    <button class="ui orange mn button"><i class="refresh  icon"></i>重置</button>
+                </li>
+            </ul>
+        </div>
+        <!--工具栏-->
+        <div class="tab-tool">
+            <div class="">
+                <button class="ui icon button">
+                    <i class="search icon"></i>
+                    查看详情
+                </button>
+                <button class="ui icon button">
+                    <i class="add icon"></i>
+                    添加
+                </button>
+                <button class="ui icon button">
+                    <i class="edit icon"></i>
+                    编辑
+                </button>
+                <button class="ui icon button">
+                    <i class="remove icon"></i>
+                    删除
+                </button>
+                <button class="ui icon button">
+                    <i class="user icon"></i>
+                    管理负责人
+                </button>
             </div>
         </div>
         <!--内容-->
+        <table class="ui blue celled table">
+            <colgroup>
+                <col width="60" />
+                <col width="60" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>序号</th>
+                    <th>客户编号</th>
+                    <th>客户名称</th>
+                    <th>客户级别</th>
+                    <th>省份</th>
+                    <th>市区</th>
+                    <th>经纬度</th>
+                    <th>负责代表</th>
+                    <th>事业部</th>
+                    <th>创建日期</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+        </table>
         <div class="table-content">
+            <!--列表内容-->
+
             <table class="ui compact selectable celled table mini">
                 <colgroup>
                     <col width="60" />
                     <col width="60" />
                 </colgroup>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>序号</th>
-                        <th>客户编号</th>
-                        <th>客户名称</th>
-                        <th>客户级别</th>
-                        <th>省份</th>
-                        <th>市区</th>
-                        <th>经纬度</th>
-                        <th>负责代表</th>
-                        <th>事业部</th>
-                        <th>创建日期</th>
-                        <th>状态</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>
@@ -513,9 +538,10 @@
     <script src="js/jquery/jquery-3.1.1.min.js"></script>
     <script src="js/semantic/dist/semantic.min.js"></script>
     <script src="js/myPage/jqPaginator.min.js"></script>
+    <script src="js/layer/layer.js"></script>
     <script>
         $(document).ready(function () {
-             
+
             $(".jibie").dropdown();
             $(".btnpagesize").dropdown();
             //动态表格高度
@@ -529,7 +555,7 @@
             $.jqPaginator('#pagination', {
                 totalPages: 100,
                 visiblePages: 5,
-                currentPage: 1, 
+                currentPage: 1,
                 first: '<a class="item">首页</a>',
                 prev: '<a class="icon item"><i class="left chevron icon"></i></a>',
                 next: '<a class="icon item"><i class="right chevron icon"></i></a>',
@@ -543,10 +569,17 @@
             });
         });
 
-        function heightauto()
-        {
+        function add() {
+            layer.open({
+                type: 2,
+                area: ['800px', '600px'],
+                title: '添加',
+                content: 'form.html'
+            });
+        }
+        function heightauto() {
             //动态表格高度
-            $(".table-content").height($("body").height() - $(".table-top").height() - $(".table-page").height() - 40);
+            //$(".table-content").css("margin-top", (40 + $(".tab-search").outerHeight()) + "px");
         }
     </script>
 </body>

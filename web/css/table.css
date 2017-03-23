@@ -7,51 +7,41 @@
 body {
 	min-width: 0;
 }
-
-.table-content {
-	width: 100%;
-	border-left: 0;
-	border-right: 0;
-	overflow: auto;
-	border: 1px solid rgba(34,36,38,.15);
-	border-left: none;
-	border-right: none;
-	border-radius: .28571429rem;
+.msg {
+	width:100%;
+	padding:0 10px;
+	box-sizing:border-box;
+	margin-top:10px;
+}
+/*面包屑导航*/
+.crumbs-nav {
+	/*position:fixed;
+	top:0;
+	left:0;
+	z-index:2;*/
+	height: 40px;
+	width:100%;
+	padding:10px;
+	box-sizing:border-box;
+	background: #fff;
+	border-bottom:1px solid rgba(0,0,0,.05);
 }
 
-.table-page {
-	height: 35px;
-	width: 100%;
-	box-sizing: border-box;
-	position: absolute;
-	left: 10px;
-	right: 10px;
-	bottom: 10px;
-	/*background: #F9FAFB;*/
-	/*box-shadow:0px -1px 10px rgba(0,0,0,.3);*/
+.crumbs-nav > .ui.breadcrumb.crumbs {
+	height:20px;
+	line-height:20px;
 }
 
-.page {
-	padding: 10px;
-	box-sizing: border-box;
-}
-
-.tab-tool {
-	margin-bottom: 10px;
-	width: 100%;
-}
-
-.tab-tool > .basic.ui.buttons > .ui.icon.button {
-	background: #fff !important;
-}
-
+/*搜索*/
 .tab-search {
+	/*position:fixed;
+	top:40px;
+	left:0;
+	z-index:2;*/
+	background:#fff;
 	width: 100%;
 	border-radius: 5px;
-	margin-bottom: 10px;
-	padding: 8px 0 0 8px;
-	/*background:#f8f8f8;*/
-	border: 1px dashed #ccc;
+	padding: 10px 0 0 10px;
 }
 
 .tab-search ul {
@@ -70,32 +60,35 @@ body {
 	list-style: none;
 	float: left;
 	width: 16.66666666%;
-	height: 30px;
+	height: 38px;
 	padding-right: 10px;
 	margin-bottom: 10px;
 	box-sizing: border-box;
 }
 
 .tab-search ul li > .ui.input > .ui.label {
-	min-width: 68px;
+	min-width: 100px;
 	text-align: center;
 }
 
-/*去除下拉框左边圆角*/
-.ui.input.select > .ui.label {
-	border-right: 0;
-}
-
 .ui.input.select > .ui.dropdown {
-	border-radius: 0 4px 4px 0;
+	border-radius: 0 .28571429rem .28571429rem 0;
 }
 
+/*快捷工具栏*/
+.tab-tool {
+	width: 100%;
+}
 
-/*table*/
-.ui.table {
-	/*margin: 0;*/
-	border-top: none;
-	border-bottom: none;
+.tab-tool > .basic.ui.buttons > .ui.icon.button {
+	background: #fff !important;
+}
+
+/*列表*/
+.table-content {
+	height:400px;
+	overflow:auto;
+	width: 100%;
 }
 
 .table-content .ui.table tr th {
@@ -132,6 +125,17 @@ input[type="number"] {
 }
 
 /*分页选中样式*/
+
+.table-page {
+	height: 35px;
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+
 #pagination > .item.active {
 	color: rgb(255, 106, 0);
 	font-weight: bold;

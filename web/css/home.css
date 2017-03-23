@@ -16,7 +16,8 @@ html, body, .page {
 body {
 	font: 14px 'Helvetica Neue','Microsoft YaHei','Hiragino Sans GB','WenQuanYi Micro Hei',Helvetica,Arial,Sans-serif;
 	color: #444;
-	background-image: url(/images/theme/bg.jpg);
+	/*background-image: url(/images/theme/bg9.jpg);*/
+	/*background:#fff;*/
 }
 
 ul, li {
@@ -34,12 +35,18 @@ a {
 .header-top {
 	height: 60px;
 	padding: 5px;
+	background:#3498DB;
 }
 
 /*LOGO*/
 .logo {
 	width: 190px;
 	height: 50px;
+	line-height:50px;
+	text-align:center;
+	font-size:2rem;	
+	color:#fff;
+	/*background:rgba(255,255,255,.2);*/
 }
 
 .logo > img {
@@ -61,11 +68,11 @@ a {
 
 .usermenu {
 	margin-right: 10px;
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .pc > i.icon {
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .usermenu.ui.dropdown .menu .item {
@@ -108,20 +115,21 @@ a {
 .page-left {
 	width: 200px;
 	height: 100%;
+	background:#fff;
+	box-shadow:1px 1px 3px rgba(0,0,0,.1);
 	float: left;
 	position: relative;
 }
 
 /*菜单列表*/
 .left-content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 3;
 	width: 200px;
-	height: 100%;
+	height: calc(100% - 50px);
 	padding: 10px;
+	padding-top:0;
+	margin-top:10px;
 	box-sizing: border-box;
+	overflow:auto;
 }
 
 .left-content > ul {
@@ -140,14 +148,11 @@ a {
 	padding-left: 10px;
 	box-sizing: border-box;
 	margin: 0;
-	margin-top:10px !important;
-	margin-bottom:10px;
-	border-radius:2px;
-	background:rgba(255, 255, 255, 1);
-	/*background:#ccc;*/
-	color: #333;
-	box-shadow:-1px -1px 3px rgba(0,0,0,.3);
-	/*border-bottom:1px solid #666;*/
+	color:rgb(0, 148, 255);
+}
+
+.Second-menu {
+	/*margin-bottom:10px;*/
 }
 
 /*二级菜单*/
@@ -161,7 +166,7 @@ a {
 	height: 30px;
 	line-height: 30px;
 	text-decoration: none;
-	color: #fff;
+	color: #666;
 	padding-left: 10px;
 	border-radius: 2px;
 	transition: background .3s,color .3s;
@@ -183,6 +188,7 @@ a {
 .Second-menu > li > a > label {
 	float: left;
 	display: block;
+	cursor:pointer;
 }
 /*二级下面有三级的时候显示的小圆点*/
 .Second-menu > li > a > span.dot {
@@ -192,26 +198,27 @@ a {
 	height: 8px;
 	border-radius: 100%;
 	float: right;
-	margin-right: 10px;
+	margin-right: 5px;
 	margin-top: 10px;
-	background: #00a700;
+	background: rgba(51, 51, 51, 0.1);
 }
 
 /*二级悬停样式（已选中除外）*/
 .Second-menu > li:not(.Second-menu-selected):not(.Second-menu-selected2) > a:hover {
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.2);
 }
 
 /*选中样式*/
 /*二级选中样式（无三级）*/
 li.Second-menu-selected {
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.2);
 	position: relative;
 	border-radius: 2px;
 }
 
 /*二级选中下面的A样式*/
 li.Second-menu-selected > a {
+	color:#111;
 }
 
 /*二级选中前面绿色竖线*/
@@ -235,7 +242,8 @@ li.Second-menu-selected2 {
 .Third-menu {
 	display: none;
 	border-radius: 2px;
-	background: rgba(0,0,0,0.3);
+	background: #ebebeb;
+	box-shadow:1px 1px 6px rgba(0,0,0,.2) inset;
 }
 
 .Third-menu > li > a {
@@ -245,9 +253,10 @@ li.Second-menu-selected2 {
 	line-height: 30px;
 	padding-left: 10px;
 	box-sizing: border-box;
-	color: #ccc;
+	color: #666;
 	cursor: pointer;
 	transition: background .3s,color .3s;
+	border-radius:2px;
 	position:relative;
 }
 
@@ -258,78 +267,65 @@ li.Second-menu-selected2 {
 
 .Third-menu > li > a > label {
 	display: block;
+	cursor:pointer;
 }
 
 .Third-menu > li > a:hover {
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.1);
 }
 
 .Third-menu > li > a.active {
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.1);
 }
 
 /*右边*/
 .page-right {
 	margin-left: 200px;
 	height: 100%;
+	font-size:0;
 }
 
 .right-top {
-	height: calc(100% - 30px);
+	height:100%;
 	box-sizing: border-box;
 }
 
 /*右边标题*/
 .right-header {
-	height: 40px;
+	height: 50px;
 	padding: 10px;
 	background: #fff;
-	border-bottom: 1px solid #eee;
+	border-bottom:1px solid rgba(0,0,0,.05);
 }
 
-.open-menu-title {
-	font-family: "Microsoft YaHei";
-	font-weight: normal;
-	font-size: 1.4rem;
-	float: left;
-	margin: 0;
-	margin-right: 20px;
-}
-
-.open-menu-title + .ui.breadcrumb.crumbs {
-	margin-top: 12px;
-}
-
-.crumbs.ui.breadcrumb {
-	color: #333;
+.right-header > .ui.breadcrumb.crumbs {
+	height:30px;
+	line-height:30px;
 }
 
 .right-content {
 	width: 100%;
-	height: calc(100% - 80px);
-	background: #fff;
+	height: calc(100% - 50px);
+	font-size:0;
 }
 
 .right-content #frm {
 	border: none;
 	width: 100%;
 	height: 100%;
-	background: rgba(255,255,255,0);
 	border-radius: 2px;
-}
-
-.right-footer {
-	width: 100%;
-	height: 40px;
-	background: #fff;
-	padding: 0 10px;
-	box-sizing: border-box;
+	
 }
 
 /*Footer背景颜色*/
 .footer {
+	width:100%;
 	height: 30px;
 	line-height: 30px;
+	background:#ebebeb;
+	position:absolute;
+	left:0;
+	bottom:0;
 }
 
 /*Footer文字颜色*/
@@ -337,6 +333,20 @@ li.Second-menu-selected2 {
 	height: 30px;
 	line-height: 30px;
 	font-size: 12px;
-	color: #fff;
+	color: #333;
 	text-align: center;
+}
+
+
+/*悬停提示*/
+.ui.popup {
+	background:#111;
+	color:#fff;
+	border:none;
+}
+
+.ui.popup:before {
+	top:22px !important;
+	background:#111 !important;
+	box-shadow:none !important;
 }

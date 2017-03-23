@@ -17,7 +17,8 @@
             <div class="ui secondary menu">
                 <div class="item fitted">
                     <div class="logo">
-                        <img src="images/bsllogo.png" />
+                        <!--<img src="images/bsllogo.png" />-->
+                        博士伦&nbsp;v1.0
                     </div>
                 </div>
                 <a class="item menu-list">
@@ -58,16 +59,15 @@
         </div>
         <div class="main">
             <div class="page-left">
-                <div class="left-bg"></div>
                 <div class="left-content">
                     <ul>
                         <li>
                             <p class="first-menu">销售管理</p>
                             <ul class="Second-menu">
                                 <li>
-                                    <a><i class="checked calendar icon"></i><label>拜访计划</label><span class="dot"></span></a>
+                                    <a href="#"><i class="checked calendar icon"></i><label>拜访计划</label><span class="dot"></span></a>
                                     <ul class="Third-menu">
-                                        <li><a><i class="file text outline icon"></i><label>药店拜访计划数量大幅减少的开发</label></a></li>
+                                        <li><a href="#"><i class="file text outline icon"></i><label>药店拜访计划数量大幅减少</label></a></li>
                                         <li><a><i class="file text outline icon"></i><label>医院拜访计划</label></a></li>
                                     </ul>
                                 </li>
@@ -86,7 +86,7 @@
                         <li>
                             <p class="first-menu">数据管理</p>
                             <ul class="Second-menu">
-                                <li><a><i class="coffee icon"></i><label>客户管理</label></a></li>
+                                <li><a href="table.html" target="frm"><i class="coffee icon"></i><label>客户管理</label></a></li>
                                 <li><a><i class="text telephone icon"></i><label>联系人管理</label></a></li>
                                 <li><a><i class="product hunt icon"></i><label>产品管理</label></a></li>
                                 <li><a><i class="upload icon"></i><label>导入管理</label></a></li>
@@ -119,31 +119,32 @@
                         </li>-->
                     </ul>
                 </div>
+                <!--<footer class="footer">
+                    <p>技术支持：苏州xx</p>
+                </footer>-->
             </div>
             <div class="page-right">
                 <div class="right-top">
                     <div class="right-header">
                         <div class="ui mini breadcrumb crumbs">
                             <a class="section"><i class="home icon"></i>首页</a>
-                            <i class="divider">|</i>
+                            <!--<i class="divider">|</i>
                             <a class="section">销售管理</a>
                             <i class="divider">|</i>
-                            <div class="active section">新旧目标管理</div>
+                            <div class="active section">新旧目标管理</div>-->
                         </div>
                     </div>
                     <div class="right-content">
-                        <iframe class="frm" id="frm" name="frm" src="table.html"></iframe>
-                    </div>
-                    <div class="right-footer">
-
+                        <iframe class="frm" id="frm" name="frm" src="default.html"></iframe>
                     </div>
                 </div>
-                <footer class="footer">
-                    <p>2005&nbsp;-&nbsp;2017&nbsp;&nbsp;&copy;版权所有&nbsp;&nbsp;&nbsp;苏州xxx </p>
-                </footer>
             </div>
         </div>
-
+        <table>
+            <tr>
+                <td data-val="1,ad_1" onclick="aaa(this)"></td>
+            </tr>
+        </table>
     </div>
     <script src="js/jquery/jquery-3.1.1.min.js"></script>
     <script src="js/semantic/dist/semantic.min.js"></script>
@@ -160,17 +161,20 @@
             });
 
             
-            $('.left-content ul li a').each(function (key,value) {
-                $(value).popup({
-                    position: 'right center',
-                    color: 'red',
-                    content: $(value).find('label').text(),
-                    onShow: function () {
-                        $(".ui.propup").css("background","#000 !important");
-                    }
-                });
-            });
 
+            //左边菜单提示
+            if (clientwidth < 1000) {
+                $('.left-content ul li a').each(function (key, value) {
+                    $(value).popup({
+                        position: 'right center',
+                        color: 'red',
+                        content: $(value).find('label').text(),
+                        onShow: function () {
+                            $(".ui.propup").css("background", "#000 !important");
+                        }
+                    });
+                });
+            }
 
             //动态调整宽度
             $(window).resize(function () {
@@ -210,6 +214,11 @@
                 $(this).addClass("active");
             });
         });
+
+        function aaa(id) {
+            var val = $(id).attr("data-val");
+            console.log(val);
+        };
     </script>
 </body>
 </html>

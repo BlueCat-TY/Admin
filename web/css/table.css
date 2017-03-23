@@ -1,39 +1,57 @@
 ﻿html, body, .page {
 	width: 100%;
-	background: rgba(255,255,255,0);
+	background: #fff;
+	font-family: 'Microsoft YaHei';
 }
+
 body {
-	min-width:0;
+	min-width: 0;
 }
 
-.page .ui.table tr th {
-	word-wrap: break-word;
+.table-content {
+	width: 100%;
+	border-left: 0;
+	border-right: 0;
+	overflow: auto;
+	border: 1px solid rgba(34,36,38,.15);
+	border-left: none;
+	border-right: none;
+	border-radius: .28571429rem;
 }
 
-.table tr td .ui.checkbox label {
-	padding: 0;
+.table-page {
+	height: 35px;
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	/*background: #F9FAFB;*/
+	/*box-shadow:0px -1px 10px rgba(0,0,0,.3);*/
 }
 
-.ui.table tr th {
-	word-wrap: break-word;
-}
-
-.ui.table tr td, .ui.table tr th {
-	text-align: center;
-}
 .page {
-	padding:10px;
-	box-sizing:border-box;
+	padding: 10px;
+	box-sizing: border-box;
 }
+
 .tab-tool {
-	margin-bottom:10px;
-	width:100%;
+	margin-bottom: 10px;
+	width: 100%;
 }
-/*.tab-tool>.ui.icon.buttons > button > i.icon {
-	margin:0;
-}*/
+
+.tab-tool > .basic.ui.buttons > .ui.icon.button {
+	background: #fff !important;
+}
+
 .tab-search {
 	width: 100%;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 8px 0 0 8px;
+	/*background:#f8f8f8;*/
+	border: 1px dashed #ccc;
 }
 
 .tab-search ul {
@@ -51,35 +69,101 @@ body {
 .tab-search ul li {
 	list-style: none;
 	float: left;
-	width: 20%;
-	padding-right:10px;
-	padding-bottom:10px;
+	width: 16.66666666%;
+	height: 30px;
+	padding-right: 10px;
+	margin-bottom: 10px;
 	box-sizing: border-box;
 }
 
-.ui.table {
-	margin:0;
+.tab-search ul li > .ui.input > .ui.label {
+	min-width: 68px;
+	text-align: center;
 }
 
-@media only screen and (max-width:1300px) {
+/*去除下拉框左边圆角*/
+.ui.input.select > .ui.label {
+	border-right: 0;
+}
+
+.ui.input.select > .ui.dropdown {
+	border-radius: 0 4px 4px 0;
+}
+
+
+/*table*/
+.ui.table {
+	/*margin: 0;*/
+	border-top: none;
+	border-bottom: none;
+}
+
+.table-content .ui.table tr th {
+	word-wrap: break-word;
+}
+
+.table-content .ui.table tr td, .table-content .ui.table tr th {
+	text-align: center;
+}
+
+.table-content .table tr td .ui.checkbox {
+}
+
+.table-content .table tr td .ui.checkbox label {
+	padding: 0;
+}
+
+.txtSkip {
+	width: 60px;
+	text-align: center;
+}
+
+.table-page .ui.action.input {
+	border:none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+/*分页选中样式*/
+#pagination > .item.active {
+	color: rgb(255, 106, 0);
+	font-weight: bold;
+	background: #ccc;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.3) inset;
+}
+
+@media only screen and (max-width:1366px) {
+	.tab-search ul li {
+		width: 20%;
+	}
+}
+
+@media only screen and (max-width:1280px) {
 	.tab-search ul li {
 		width: 25%;
 	}
 }
 
-@media only screen and (max-width:1140px) {
+@media only screen and (max-width:1024px) {
 	.tab-search ul li {
 		width: 33.3333333%;
+	}
+
+	.ui.table tr td, .ui.table tr th {
+		text-align: left;
 	}
 }
 
 @media only screen and (max-width:768px) {
 	.tab-search ul li {
 		width: 50%;
-	}
-
-	.ui.table tr td, .ui.table tr th {
-		text-align: left;
 	}
 }
 

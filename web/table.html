@@ -10,133 +10,544 @@
 </head>
 <body>
     <div class="page">
-        <div class="ui teal mini floating  message">
-            <i class="close icon"></i>
-            <div class="header">你可通过此功能查找数据</div>
-            <!--<p>You may now log-in with the username you have chosen</p>-->
-        </div>
-        <div class="tab-tool">
-            <div class="basic ui buttons">
-                <button class="ui icon button active">
-                    <i class="search icon"></i>
-                    查看
-                </button>
-                <button class="ui icon button">
-                    <i class="add icon"></i>
-                    添加
-                </button>
-                <button class="ui icon button">
-                    <i class="edit icon"></i>
-                    编辑
-                </button>
-                <button class="ui icon button">
-                    <i class="remove icon"></i>
-                    删除
-                </button>
-                <button class="ui icon button">
-                    <i class="user icon"></i>
-                    管理负责人
-                </button>
-                <div class="ui icon button" data-tooltip="Add users to your feed" data-inverted="">
-                    <i class="add icon"></i>
+        <!--条件搜索-->
+        <div class="table-top">
+            <!--搜索栏-->
+            <div class="tab-search">
+                <ul>
+                    <li>
+                        <div class="ui labeled mini fluid input">
+                            <div class="ui label">客户编号</div>
+                            <input type="text" placeholder="客户编号" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input">
+                            <div class="ui label">客户名称</div>
+                            <input type="text" placeholder="客户编号" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">客户级别</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                                <option value="4">D</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input">
+                            <div class="ui label">负责人</div>
+                            <input type="text" placeholder="负责人" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">经纬度状态</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">有</option>
+                                <option value="2">无</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">是否有效</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">有效</option>
+                                <option value="2">无效</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">省份</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">湖北</option>
+                                <option value="2">安徽</option>
+                                <option value="3">广东</option>
+                                <option value="4">江苏</option>
+                                <option value="5">浙江</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">市区</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">武汉</option>
+                                <option value="2">合肥</option>
+                                <option value="3">广州</option>
+                                <option value="4">苏州</option>
+                                <option value="5">杭州</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input">
+                            <div class="ui label">创建日期</div>
+                            <input type="text" placeholder="" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input">
+                            <div class="ui label">TO</div>
+                            <input type="text" placeholder="" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ui labeled mini fluid input select">
+                            <div class="ui label">事业部</div>
+                            <select class="ui dropdown fluid jibie">
+                                <option value="-1">请选择</option>
+                                <option value="1">OTC</option>
+                                <option value="2">RX</option>
+                                <option value="3">SU</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="ui green mini button">搜索</button>
+                    </li>
+                </ul>
+            </div>
+            <!--快捷菜单-->
+            <div class="tab-tool">
+                <div class="ui basic floated buttons">
+                    <button class="ui icon button">
+                        <i class="search icon"></i>
+                        查看详情
+                    </button>
+                    <button class="ui icon button">
+                        <i class="add icon"></i>
+                        添加
+                    </button>
+                    <button class="ui icon button">
+                        <i class="edit icon"></i>
+                        编辑
+                    </button>
+                    <button class="ui icon button">
+                        <i class="remove icon"></i>
+                        删除
+                    </button>
+                    <button class="ui icon button">
+                        <i class="user icon"></i>
+                        管理负责人
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="tab-search">
-            <ul>
-                <li>
-                    <div class="ui labeled fluid input">
-                        <div class="ui label">客户编号</div>
-                        <input type="text" placeholder="客户编号" />
-                    </div>
-                </li>
-                <li>
-                    <div class="ui labeled fluid input">
-                        <div class="ui label">客户名称</div>
-                        <input type="text" placeholder="客户编号" />
-                    </div>
-                </li>
-                <li>
-                    <div class="ui labeled fluid input">
-                        <div class="ui label">客户级别</div>
-                        <input type="text" placeholder="客户级别" />
-                    </div>
-                </li>
-                <li>
-                    <select class="ui search dropdown fluid jibie">
-                        <option value="-1">请选择</option>
-                        <option value="1">A</option>
-                        <option value="2">B</option>
-                        <option value="3">C</option>
-                    </select>
-                </li>
-                <li>
-                    <button class="ui green button">搜索</button>
-                </li>
-            </ul>
+        <!--内容-->
+        <div class="table-content">
+            <table class="ui compact selectable celled table mini">
+                <colgroup>
+                    <col width="60" />
+                    <col width="60" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>序号</th>
+                        <th>客户编号</th>
+                        <th>客户名称</th>
+                        <th>客户级别</th>
+                        <th>省份</th>
+                        <th>市区</th>
+                        <th>经纬度</th>
+                        <th>负责代表</th>
+                        <th>事业部</th>
+                        <th>创建日期</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td><div class="ui star rating" data-rating="3" data-max-rating="3"></div></td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>3</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>4</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>5</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>6</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>7</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>8</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>9</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>10</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>11</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>12</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>13</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>14</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>15</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="example">
+                                <label></label>
+                            </div>
+                        </td>
+                        <td>16</td>
+                        <td>100011</td>
+                        <td>咸阳市中心医院</td>
+                        <td>A</td>
+                        <td>陕西</td>
+                        <td>咸阳</td>
+                        <td>有</td>
+                        <td>张三</td>
+                        <td>OTC</td>
+                        <td>2017-03-08 14:27:52</td>
+                        <td>有效</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        
-        <table class="ui compact selectable celled table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>客户编号</th>
-                    <th>客户名称</th>
-                    <th>客户级别</th>
-                    <th>省份</th>
-                    <th>市区</th>
-                    <th>经纬度</th>
-                    <th>创建日期</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tr>
-                <td>
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label></label>
+        <!--分页-->
+        <div class="table-page">
+            <div class="ui left floated pointing top dropdown labeled icon basic button btnpagesize" style="background:#fff !important;">
+                <i class="filter icon"></i>
+                <span class="text">10</span>
+                <div class="menu">
+                    <div class="item active">10</div>
+                    <div class="item">20</div>
+                    <div class="item">50</div>
+                    <div class="item">100</div>
+                </div>
+            </div>
+            <div>
+                <div class="ui mini left floated pagination menu" id="pagination">
+                </div>
+                <input type="hidden" id="PageCount" runat="server" />
+                <input type="hidden" id="PageSize" runat="server" value="8" />
+                <input type="hidden" id="countindex" runat="server" value="10" />
+                <!--设置最多显示的页码数 可以手动设置 默认为7-->
+                <input type="hidden" id="visiblePages" runat="server" value="7" />
+            </div>
+            <div class="ui left floated mini menu" style="background:#fff !important;">
+                <div class="item">
+                    100条&nbsp;/&nbsp;20页
+                </div>
+                <div class="item fitted">
+                    <div class="ui labeled action input">
+                        <input type="number" placeholder="1" class="txtSkip">
+                        <button class="ui button">跳转</button>
                     </div>
-                </td>
-                <td>100011</td>
-                <td>咸阳市中心医院</td>
-                <td>A</td>
-                <td>陕西</td>
-                <td>咸阳</td>
-                <td>有</td>
-                <td>2017-03-08 14:27:52</td>
-                <td>有效</td>
-                <td>
-                    <a class="ui label">查看</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="example">
-                        <label></label>
-                    </div>
-                </td>
-                <td>100011</td>
-                <td>咸阳市中心医院</td>
-                <td>A</td>
-                <td>陕西</td>
-                <td>咸阳</td>
-                <td>有</td>
-                <td>2017-03-08 14:27:52</td>
-                <td>有效</td>
-                <td>
-                    <a class="ui label">查看</a>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/jquery/jquery-3.1.1.min.js"></script>
     <script src="js/semantic/dist/semantic.min.js"></script>
+    <script src="js/myPage/jqPaginator.min.js"></script>
     <script>
         $(document).ready(function () {
-            $(".jibie.ui.dropdown").dropdown();
+             
+            $(".jibie").dropdown();
+            $(".btnpagesize").dropdown();
+            //动态表格高度
+            heightauto();
+
+            $(window).resize(function () {
+                //动态表格高度
+                heightauto();
+            });
+
+            $.jqPaginator('#pagination', {
+                totalPages: 100,
+                visiblePages: 5,
+                currentPage: 1, 
+                first: '<a class="item">首页</a>',
+                prev: '<a class="icon item"><i class="left chevron icon"></i></a>',
+                next: '<a class="icon item"><i class="right chevron icon"></i></a>',
+                last: '<a class="item">末页</a>',
+                page: '<a class="item">{{page}}</a>',
+                //onPageChange: function (num, type) {
+                //    if (type == "change") {
+                //        exeData(num, type);
+                //    }
+                //}
+            });
         });
+
+        function heightauto()
+        {
+            //动态表格高度
+            $(".table-content").height($("body").height() - $(".table-top").height() - $(".table-page").height() - 40);
+        }
     </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /*home*/
 @media only screen and (min-width:1000px) {
 	.Second-menu > li > a > label, .Third-menu > li > a > label {
-		width: 120px;
+		width: 100px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -11,12 +11,11 @@
 @media only screen and (max-width:1000px) {
 	.page-left {
 		width: 40px;
-		
 	}
 
 	.left-content {
 		width: 40px;
-		padding:0;
+		padding: 0;
 	}
 
 	.first-menu {
@@ -33,53 +32,19 @@
 	}
 
 	.Second-menu > li > a > label, .Third-menu > li > a > label {
-		display:none;
-		/*white-space: nowrap;
-		padding: 0 10px;
-		border-radius: 5px;
-		background: #000;
-		color: #fff;
-		position: absolute;
-		top: 0;
-		left: -300px;
-		z-index: 2;
-		transition: left .3s;*/
-	}
-	.propupReversal {
-		background:#000 !important;
-		color:#fff;
+		display: none;
 	}
 
-	/*.Second-menu > li > a > label:after, .Third-menu > li > a > label:after {
-		position: absolute;
-		top: 9px;
-		left: -7px;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-top: 5px solid transparent;
-		border-right: 7px solid #000;
-		border-bottom: 5px solid transparent;
-	}*/
+	.propupReversal {
+		background: #000 !important;
+		color: #fff;
+	}
 
 	.Second-menu > li > a > span.dot {
-		margin-right: 0;
-	}
-
-	/*.Second-menu > li > a:hover > label, .Third-menu > li > a:hover > label {
-		animation: leftmenu .3s forwards;
-	}
-
-	/*左边菜单提示动画*/
-	@keyframes leftmenu {
-		0% {
-			left: 100px;
-		}
-
-		100% {
-			left: 60px;
-		}
+		margin-right:0;
+		position: absolute;
+		top: -4px;
+		right: 8px;
 	}
 
 	.page-right {

@@ -12,23 +12,7 @@
 </head>
 <body>
     <div class="page">
-        <!--面包屑导航-->
-        <div class="crumbs-nav">
-            <div class="ui breadcrumb crumbs">
-                <a class="section"><i class="home icon"></i>首页</a>
-                <i class="divider">|</i>
-                <a class="section">数据管理</a>
-                <i class="divider">|</i>
-                <div class="active section">客户管理</div>
-            </div>
-        </div>
-        <!--提示-->
-        <div class="msg">
-            <div class="ui borderless menu"> <!--green inverted-->
-                <div class="header item"><i class="search icon"></i>查询条件</div>
-                <a class="item right icon floated"><i class="chevron up icon"></i></a>
-            </div>
-        </div>
+
         <!--搜索条件-->
         <div class="tab-search">
             <ul>
@@ -132,67 +116,48 @@
                     </div>
                 </li>
                 <li>
-                    <button class="ui primary mn button"><i class="search  icon"></i>搜索</button>
-                    <button class="ui orange mn button"><i class="refresh  icon"></i>重置</button>
+                    <button class="ui primary button"><i class="search  icon"></i>搜索</button>
+                    <button class="ui button"><i class="refresh  icon"></i>重置</button>
                 </li>
             </ul>
         </div>
         <!--工具栏-->
         <div class="tab-tool">
-            <div class="">
-                <button class="ui icon button">
-                    <i class="search icon"></i>
-                    查看详情
-                </button>
-                <button class="ui icon button">
-                    <i class="add icon"></i>
-                    添加
-                </button>
-                <button class="ui icon button">
-                    <i class="edit icon"></i>
-                    编辑
-                </button>
-                <button class="ui icon button">
-                    <i class="remove icon"></i>
-                    删除
-                </button>
-                <button class="ui icon button">
-                    <i class="user icon"></i>
-                    管理负责人
-                </button>
+            <!--纵向：vertical 反色：blue inverted-->
+            <div class="ui fluid menu">
+                <!--<div class="header item">工具栏</div>-->
+                <a class="item"><i class="search icon"></i>查看详情</a>
+                <a class="item"><i class="add icon"></i>添加</a>
+                <a class="item"><i class="edit icon"></i>编辑</a>
+                <a class="item"><i class="remove icon"></i>删除</a>
+                <a class="item"><i class="user icon"></i>管理负责人</a>
+                <a class="item right floated search-up" data-up="0"><i class="chevron up icon"></i>搜索条件</a>
             </div>
         </div>
         <!--内容-->
-        <table class="ui blue celled table">
-            <colgroup>
-                <col width="60" />
-                <col width="60" />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>序号</th>
-                    <th>客户编号</th>
-                    <th>客户名称</th>
-                    <th>客户级别</th>
-                    <th>省份</th>
-                    <th>市区</th>
-                    <th>经纬度</th>
-                    <th>负责代表</th>
-                    <th>事业部</th>
-                    <th>创建日期</th>
-                    <th>状态</th>
-                </tr>
-            </thead>
-        </table>
-        <div class="table-content">
+        <div class="tab-content">
             <!--列表内容-->
-
             <table class="ui compact selectable celled table mini">
                 <colgroup>
                     <col width="60" />
                     <col width="60" />
                 </colgroup>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>序号</th>
+                        <th>客户编号</th>
+                        <th>客户名称</th>
+                        <th>客户级别</th>
+                        <th>省份</th>
+                        <th>市区</th>
+                        <th>经纬度</th>
+                        <th>负责代表</th>
+                        <th>事业部</th>
+                        <th>创建日期</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
                         <td>
@@ -502,17 +467,27 @@
             </table>
         </div>
         <!--分页-->
-        <div class="table-page">
-            <div class="ui left floated pointing top dropdown labeled icon basic button btnpagesize" style="background:#fff !important;">
-                <i class="filter icon"></i>
-                <span class="text">10</span>
-                <div class="menu">
-                    <div class="item active">10</div>
-                    <div class="item">20</div>
-                    <div class="item">50</div>
-                    <div class="item">100</div>
+        <div class="tab-page">
+            <!--每页多少条-->
+            <div class="ui mini left borderless floated menu">
+                <div class="item">
+                    每页
+                </div>
+                <div class="ui pointing dropdown link item btnpagesize">
+                    <span class="text">10</span>
+                    <div class="menu">
+                        <div class="item active">10</div>
+                        <div class="item">20</div>
+                        <div class="item">50</div>
+                        <div class="item">100</div>
+                        <div class="item">200</div>
+                    </div>
+                </div>
+                <div class="item labeled green">
+                    条
                 </div>
             </div>
+            <!--分页列表-->
             <div>
                 <div class="ui mini left floated pagination menu" id="pagination">
                 </div>
@@ -522,23 +497,24 @@
                 <!--设置最多显示的页码数 可以手动设置 默认为7-->
                 <input type="hidden" id="visiblePages" runat="server" value="7" />
             </div>
-            <div class="ui left floated mini menu" style="background:#fff !important;">
+            <div class="ui mini left floated menu">
                 <div class="item">
-                    100条&nbsp;/&nbsp;20页
+                    共100条&nbsp;/&nbsp;20页
                 </div>
                 <div class="item fitted">
-                    <div class="ui labeled action input">
-                        <input type="number" placeholder="1" class="txtSkip">
-                        <button class="ui button">跳转</button>
+                    <div class="ui input">
+                        <input type="number" value="1" placeholder="1" class="txtSkip">
                     </div>
                 </div>
+                <a class="item labeled green">
+                    <strong>跳转</strong>
+                </a>
             </div>
         </div>
     </div>
     <script src="js/jquery/jquery-3.1.1.min.js"></script>
     <script src="js/semantic/dist/semantic.min.js"></script>
     <script src="js/myPage/jqPaginator.min.js"></script>
-    <script src="js/layer/layer.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -546,6 +522,23 @@
             $(".btnpagesize").dropdown();
             //动态表格高度
             heightauto();
+
+            $(".search-up").click(function () {
+                var dataup = $(this).data("up");
+                if (dataup == 0) {
+                    $(".tab-search").height(0);
+                    $(this).data("up", "1");
+                    $(this).find("i.icon").removeClass("up").addClass("down");
+                    heightauto();
+
+                } else {
+                    $(".tab-search").css("height", "auto");
+                    $(this).data("up", "0");
+                    $(this).find("i.icon").removeClass("down").addClass("up");
+                    heightauto();
+                }
+
+            });
 
             $(window).resize(function () {
                 //动态表格高度
@@ -577,9 +570,19 @@
                 content: 'form.html'
             });
         }
+
+        //动态表格高度
         function heightauto() {
-            //动态表格高度
-            //$(".table-content").css("margin-top", (40 + $(".tab-search").outerHeight()) + "px");
+            var a = document.body.clientHeight; //页面可见高度
+            var b = $(".tab-search").outerHeight(); //条件搜索高度
+            var c = $(".tab-tool").outerHeight(); //工具栏高度
+            var d = $(".tab-page").outerHeight(); //分页高度
+
+            //console.log("总高度：" + a);
+            //console.log("总和：" + (b + c + d) + "/ 搜索:" + b + " / 工具：" + c + " / 分页：" + d);
+            //console.log("结果：" + (a - (b + c + d)));
+
+            $(".tab-content").height(a - (b + c + d + 20));
         }
     </script>
 </body>

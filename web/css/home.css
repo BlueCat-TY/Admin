@@ -284,9 +284,26 @@ li.Second-menu-selected2 {
 	height: 100%;
 }
 
+/*面包屑导航*/
+.crumbs-nav {
+	height: 40px;
+	width:100%;
+	padding:10px;
+	box-sizing:border-box;
+	background: #fff;
+	border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.crumbs-nav > .ui.breadcrumb.crumbs {
+	height:20px;
+	line-height:20px;
+	font-size:14px;
+}
+
+
 .right-content {
 	width: 100%;
-	height: calc(100% - 30px);
+	height: calc(100% - 70px); 
 	font-size:0;
 }
 

@@ -145,7 +145,6 @@
     <script>
         //获取页面宽度
         var clientwidth = document.body.clientWidth;
-
         $(document).ready(function () {
 
             //下拉框
@@ -154,7 +153,7 @@
             });
 
             //左边菜单提示
-            if (clientwidth < 1000) {
+            if ($(".page-left").width() == 40) {
                 $('.left-content ul li a').each(function (key, value) {
                     $(value).popup({
                         position: 'right center',

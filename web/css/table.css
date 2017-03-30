@@ -43,14 +43,16 @@ body {
 	margin-bottom: 10px;
 	box-sizing: border-box;
 }
-
-.tab-search ul li > .ui.input > .ui.label {
-	min-width: 100px;
-	text-align: center;
+.tab-search ul li.buttons {
+	text-align:center;
 }
 
-.ui.input.select > .ui.dropdown {
-	border-radius: 0 .28571429rem .28571429rem 0;
+.tab-search ul li > .ui.input .title {
+	height:37px;
+	line-height:37px;
+	min-width: 90px;
+	text-align: right;
+	box-sizing:border-box;
 }
 
 /*快捷工具栏*/
@@ -159,5 +161,8 @@ input[type="number"] {
 @media only screen and (max-width:414px) {
 	.tab-search ul li {
 		width: 100%;
+	}
+	.tab-content .ui.table tr td, .tab-content .ui.table tr th{
+		text-align:left;
 	}
 }
